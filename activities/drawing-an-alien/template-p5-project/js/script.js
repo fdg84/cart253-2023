@@ -34,7 +34,7 @@ function setup() {
     ellipse(320, 240, 250, 400);
 
     // draw eyes
-    fill(0);
+    fill(random(0, 255));
     ellipse(250, 240, 80, 160);
     ellipse(390, 240, 80, 160);
     fill(20);
