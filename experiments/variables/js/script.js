@@ -16,13 +16,24 @@ function preload() {
 
 
 // declare variable
-let backgroundShade = 0;
-let circleX = 250;
-let circleY = 250;
-let circleSize = 100;
-let circleSpeed = 2;
-let circleAcceleration = 0.25;
+//let backgroundShade = 0;
+//let circleX = 0;
+//let circleY = 250;
+//let circleSize = 100;
+//let circleSpeed = 2;
+//let circleAcceleration = 0.25;
 
+// variables video 3.4
+//replace variables with property values
+
+let backgroundShade = 0;
+
+let circle = {
+    x: 0,
+    y: 250,
+    size: 100,
+    speed: 2
+}
 
 /**
  * Description of setup
@@ -54,15 +65,18 @@ function draw() {
 
  // variables video 3.2
  // variables video 3.3
- // variables video 3.4
- backgroundShade = backgroundShade + 0.5;
- background(backgroundShade);
- circleSize = circleSize + 1;
- circleY = circleY - 1;
- circleX += circleSpeed;
- circleSpeed -= circleAcceleration;
- ellipse(circleX, circleY, circleSize);
+ //backgroundShade = backgroundShade + 0.5;
+ //background(backgroundShade);
+ //circleSize = circleSize + 1;
+ //circleY = circleY - 1;
+ //circleX += circleSpeed;
+ //circleSpeed -= circleAcceleration;
+ //ellipse(circleX, circleY, circleSize);
 
+  // variables video 3.4
+    background(backgroundShade);
+    circle.x = circle.x + circle.speed;
+    ellipse(circle.x, circle.y, circle.size);
 
 
 
