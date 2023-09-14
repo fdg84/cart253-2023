@@ -33,20 +33,6 @@ function setup() {
     fill(0, 250, 0);
     ellipse(320, 240, 250, 400);
 
-    // draw eyes
-    fill(random(0, 255));
-    ellipse(250, 240, 80, 160);
-    ellipse(390, 240, 80, 160);
-    fill(20);
-    ellipse(250, 240, 60, 90);
-    ellipse(390, 240, 60, 90);
-    fill(40);
-    ellipse(250, 240, 40, 70);
-    ellipse(390, 240, 40, 70);
-    fill(60);
-    ellipse(250, 240, 20, 50);
-    ellipse(390, 240, 20, 50);
-
      // draw nostrils
      fill(0);
      ellipse(300, 350, 10, 10);
@@ -65,5 +51,20 @@ function setup() {
  * Description of draw()
 */
 function draw() {
+
+    // draw eyes
+    noStroke();
+    fill(random(0, 255));
+    ellipse(250, 240, 80, 160);
+    ellipse(390, 240, 80, 160);
+    fill(20);
+    ellipse(250, 240, 60, 90);
+    ellipse(390, 240, 60, 90);
+    fill(40);
+    ellipse(250, 240, 40, 70);
+    ellipse(390, 240, 40, 70);
+    fill(60);
+    ellipse(250, 240, 20, 50);
+    ellipse(390, 240, 20, 50);
 
 }
