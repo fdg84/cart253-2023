@@ -73,12 +73,16 @@ function draw() {
  //circleSpeed -= circleAcceleration;
  //ellipse(circleX, circleY, circleSize);
 
-  // variables video 3.4
-    background(backgroundShade);
-    circle.x = circle.x + circle.speed;
-    ellipse(circle.x, circle.y, circle.size);
 
+// variables video 3.4
+background(backgroundShade);
+circle.x = circle.x + circle.speed;
+ellipse(circle.x, circle.y, circle.size);
 
-
-
+// variables video 3.5
+// printing out info if needed to debug project
+//console.log("circleX: " + circleX);
+// same as code below 
+//console.log(`circleX: ${circleX}, circleY: ${circleY}, circleSize: ${circleSize}`);
+// NaN = Not a Number - when undefined value ex: speed
 }
