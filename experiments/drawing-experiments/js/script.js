@@ -22,11 +22,14 @@ function setup() {
 
     createCanvas(1000, 500);
 
+// light gray color
     background(222, 222, 222);
 
+// white circle w line
     stroke(33, 77,44);
     circle(460, 460, 450);
 
+// pyramid w transparent blue
     rectMode(CENTER);
     fill(10, 20, 225, 10);
     rect(220, 220, 100, 100);
@@ -39,8 +42,8 @@ function setup() {
     fill(50, 20, 225, 50);
     rect(220, 220, 60, 60);
 
+// purple cone
     noStroke();
-    
     ellipseMode(CORNER);
     fill(107, 20, 225);
     ellipse(350, 350, 100, 100)
