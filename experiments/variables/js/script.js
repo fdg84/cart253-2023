@@ -1,9 +1,8 @@
 /**
- * Title of Project
- * Author Name
+ * Variables
+ * Francis Ouellette
  * 
- * This is a template. You must fill in the title, author, 
- * and this description to match your project!
+ * Variables class test
  */
 
 "use strict";
