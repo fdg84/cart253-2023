@@ -56,11 +56,11 @@ function draw() {
 
  //   background(255, 0, 0);
     //background(mouseX, mouseY, 0);
- //   rectMode(CENTER);
-    //rect(250, 250, 100, 100);
-    //rect(mouseX, mouseY, 100, 100);
-    //rect(250, 250, mouseX, mouseY);
- //   rect(width / 2, height / 2, 100, 100);
+    rectMode(CENTER);
+    rect(20, 20, 10, 10);
+    rect(mouseX, mouseY, 10, 10);
+    rect(250, 250, mouseX, mouseY);
+    rect(width / 2, height / 2, 100, 100);
 
 
  // variables video 3.2
@@ -75,9 +75,9 @@ function draw() {
 
 
 // variables video 3.4
-background(backgroundShade);
-circle.x = circle.x + circle.speed;
-ellipse(circle.x, circle.y, circle.size);
+//background(backgroundShade);
+//circle.x = circle.x + circle.speed;
+//ellipse(circle.x, circle.y, circle.size);
 
 // variables video 3.5
 // printing out info if needed to debug project
