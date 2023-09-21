@@ -1,8 +1,8 @@
 /**
- * Variables
+ * I LIKE TO MOVE IT
  * Francis Ouellette
  * 
- * Variables class test
+ * NEW EXERCISE
  */
 
 "use strict";
@@ -15,16 +15,6 @@ function preload() {
 }
 
 
-// declare variable
-//let backgroundShade = 0;
-//let circleX = 0;
-//let circleY = 250;
-//let circleSize = 100;
-//let circleSpeed = 2;
-//let circleAcceleration = 0.25;
-
-// variables video 3.4
-//replace variables with property values
 
 let backgroundShade = 0;
 
@@ -40,7 +30,6 @@ let circle = {
 */
 function setup() {
 
-//createCanvas(windowWidth, windowHeight);
 createCanvas(500, 500);
 
 }
@@ -51,8 +40,7 @@ createCanvas(500, 500);
 */
 function draw() {
 
-// variables video 3.1
-    // mute background if you want a trail of squares
+    // muted background to make a trail of squares
 
  //   background(255, 0, 0);
     //background(mouseX, mouseY, 0);
@@ -63,8 +51,6 @@ function draw() {
     rect(width / 2, height / 2, 100, 100);
 
 
- // variables video 3.2
- // variables video 3.3
  //backgroundShade = backgroundShade + 0.5;
  //background(backgroundShade);
  //circleSize = circleSize + 1;
@@ -74,15 +60,9 @@ function draw() {
  //ellipse(circleX, circleY, circleSize);
 
 
-// variables video 3.4
 //background(backgroundShade);
 //circle.x = circle.x + circle.speed;
 //ellipse(circle.x, circle.y, circle.size);
 
-// variables video 3.5
-// printing out info if needed to debug project
-//console.log("circleX: " + circleX);
-// same as code below 
-//console.log(`circleX: ${circleX}, circleY: ${circleY}, circleSize: ${circleSize}`);
-// NaN = Not a Number - when undefined value ex: speed
+
 }
