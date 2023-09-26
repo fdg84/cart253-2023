@@ -17,7 +17,7 @@ let clown = {
 
 function preload() {
 // clownImage = loadImage("C:/Users/T450s/Documents/GitHub/cart253-2023/experiments/Conditionals_Images/assets/images/clown.png")
-clownImage = loadImage("C:/Users/T450s/Documents/GitHub/cart253-2023/experiments/Conditionals_Images/assets/images/clown.png")
+clownImage = loadImage("assets/images/clown.png")
 
 }
 
@@ -26,11 +26,19 @@ createCanvas(500,500);
 }
 
 function draw() {
-// background(0);
+background(0);
 
 // imageMode(CENTER);
 // image(clownImage,mouseX,mouseY);
 
+clown.x = mouseX;
+clown.y = mouseY;
 
+imageMode(CENTER);
+image(clown.image,clown.x,clown.y,clown.size,clown.size);
+}
 
+function mousePressed() {
+    clown.size = clown.size + 50;
+    
 }
