@@ -7,8 +7,10 @@
 
 "use strict"; 
 
-function preload() {
+let appleImage;
 
+function preload() {
+    appleImage = loadImage('assets/images/apple.jpg');
 }
 
 let covid = {
@@ -28,7 +30,7 @@ let covid = {
   let user = {
     x: 250,
     y: 250,
-    size: 100,
+    size: 10,
     fill: 255
   };
   
@@ -46,6 +48,9 @@ let covid = {
   function draw() {
     background(0);
   
+    imageMode(CENTER);
+    image(appleImage,mouseX,mouseY,150,150);
+
     // // Display static
     // for (let i = 0; i < numStatic; i++) {
     //   let x = random(0, width);
@@ -81,3 +86,4 @@ let covid = {
     fill(user.fill);
     ellipse(user.x, user.y, user.size);
   }
+
