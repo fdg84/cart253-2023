@@ -18,11 +18,11 @@ size: 100,
 vx: 0,
 vy: 0,
 speed: 5
-// fill: {
-//     r: 255,
-//     g: 0,
-//     b: 0
-//     }
+fill: {
+    r: 255,
+    g: 0,
+    b: 0
+    }
 
 };
 
@@ -33,7 +33,7 @@ let user = {
     fill: 255
 };
 
-let numStatic = 5000;
+let numStatic = 5000; 
 
 function setup() {
     createCanvas(windowWidth,windowHeight);
