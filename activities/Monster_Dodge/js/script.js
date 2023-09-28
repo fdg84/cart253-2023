@@ -86,5 +86,5 @@ let monster = {
 
     imageMode(CENTER);
     image(faceImage,monster.x,monster.y,350,350);
-  }
+  } 
 
