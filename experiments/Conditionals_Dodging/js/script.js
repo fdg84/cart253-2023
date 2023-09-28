@@ -1,89 +1,79 @@
 /**
- * Dodging
+ * Monster Dodge
  * Francis Ouellette
- * 
- * Test!
  */
 
 "use strict"; 
 
-let appleImage;
+let faceImage;
+let wormImage;
 
 function preload() {
-    appleImage = loadImage('assets/images/apple.jpg');
+    faceImage = loadImage('assets/images/face.png');
+    wormImage = loadImage('assets/images/worm.png');
 }
 
-let covid = {
+let monster = {
     x: 0,
     y: 250,
     size: 100,
     vx: 0,
     vy: 0,
     speed: 5,
-    fill: {
-      r: 255,
-      g: 0,
-      b: 0
-    }
+    fill: 255
   };
   
   let user = {
     x: 250,
     y: 250,
-    size: 10,
+    size: 1,
     fill: 255
   };
-  
-//   let numStatic = 5000;
   
   function setup() {
     createCanvas(windowWidth, windowHeight);
   
-    covid.y = random(0, height);
-    covid.vx = covid.speed;
+    monster.y = random(0, height);
+    monster.vx = monster.speed;
   
     noCursor();
   }
   
   function draw() {
     background(0);
-  
-    imageMode(CENTER);
-    image(appleImage,mouseX,mouseY,150,150);
 
-    // // Display static
-    // for (let i = 0; i < numStatic; i++) {
-    //   let x = random(0, width);
-    //   let y = random(0, height);
-    //   stroke(255);
-    //   point(x, y);
-    // }
   
-    // Covid movement
-    covid.x = covid.x + covid.vx;
-    covid.y = covid.y + covid.vy;
+    // monster movement
+    monster.x = monster.x + monster.vx;
+    monster.y = monster.y + monster.vy;
   
-    if (covid.x > width) {
-      covid.x = 0;
-      covid.y = random(0, height);
+    if (monster.x > width) {
+        monster.x = 0;
+        monster.y = random(0, height);
     }
   
     // User movement
     user.x = mouseX;
     user.y = mouseY;
   
-    // Check for catching covid
-    let d = dist(user.x, user.y, covid.x, covid.y);
-    if (d < covid.size / 2 + user.size / 2) {
+    // Check for catching monster
+    let d = dist(user.x, user.y, monster.x, monster.y);
+    if (d < monster.size / 2 + user.size / 2) {
       noLoop();
     }
   
-    // Display covid 
-    fill(covid.fill.r, covid.fill.g, covid.fill.b);
-    ellipse(covid.x, covid.y, covid.size);
+    // Display monster 
+    fill(monster.fill.r, monster.fill.g, monster.fill.b);
+    ellipse(monster.x, monster.y, monster.size);
   
     // Display user
     fill(user.fill);
     ellipse(user.x, user.y, user.size);
+
+    imageMode(CENTER);
+    image(wormImage,mouseX,mouseY,250,250);
+
+    imageMode(CENTER);
+    image(faceImage,monster.x,monster.y,250,250);
   }
 
