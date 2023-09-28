@@ -42,6 +42,14 @@ let monster = {
   function draw() {
     background(0);
 
+    let i = 0;
+    while(i <= 10){
+        print("i is:" + i);
+        ellipse(random(width), random(height), 100);
+        i = i+1;
+    }
+    print("!!!!!");
+
     if(mouseX > monster.x){
         background(255, 0, 0);
     }
@@ -77,6 +85,6 @@ let monster = {
     image(wormImage,mouseX,mouseY,250,250);
 
     imageMode(CENTER);
-    image(faceImage,monster.x,monster.y,250,250);
+    image(faceImage,monster.x,monster.y,350,350);
   }
 
