@@ -19,7 +19,7 @@ let monster = {
     size: 100,
     vx: 0,
     vy: 0,
-    speed: 5,
+    speed: 15,
     fill: 255
   };
   
@@ -42,6 +42,9 @@ let monster = {
   function draw() {
     background(0);
 
+    if(mouseX > monster.x){
+        background(255, 0, 0);
+    }
   
     // monster movement
     monster.x = monster.x + monster.vx;
