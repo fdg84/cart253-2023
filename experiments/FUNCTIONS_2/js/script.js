@@ -17,10 +17,11 @@ function setup() {
 function draw() {
     background(0);
 
-    parallels();
+    parallels(100,100);
+    parallels(50,50);
   }
 
-  function parallels() {
+  function parallels(x,y) {
     let x = 50;
     let y = 250;
     for (let i = 0; i < 20; i++) {
