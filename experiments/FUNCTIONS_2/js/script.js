@@ -17,6 +17,10 @@ function setup() {
 function draw() {
     background(0);
 
+    parallels();
+  }
+
+  function parallels() {
     let x = 50;
     let y = 250;
     for (let i = 0; i < 20; i++) {
@@ -26,6 +30,4 @@ function draw() {
         rect(x,y,2,50);
         x = x + 5;
     }
-
-
-}
+  }
