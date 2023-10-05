@@ -22,6 +22,8 @@ let circle = {
     speed: 5,
     size: 100
   }
+
+let state = `lovebug`;
   
   function setup() {
     createCanvas(1500, 700);
@@ -68,26 +70,23 @@ let circle = {
 
   circle1.x = constrain(circle1.x, 0, width);
   circle1.y = constrain(circle1.y, 0, width);
+
+ // STATES
+
+ if (state === `lovebug`) {
+  lovebug();
+  }
+  else if (state === `captured`) {
+  captured();
+  }
+
 }
 
-// STATES
+ 
 
-        if (state === `lovebug`) {
-        lovebug();
-        }
-        else if (state === `captured`) {
-        captured();
-        }
   
   function lovebug() {
     checkOverlap();
-    }
-
-  function checkOverlap() {
-    let d = dist(circle1.x,circle1.y,circle.x,circle.y);
-    if (d < circle1.size/2 + circle.size/2) {
-    state = `captured`;
-    }
     }
   
   function captured() {
@@ -97,6 +96,13 @@ let circle = {
     textAlign(CENTER,CENTER);
     text(`CAPTURED THE LOVE BUG!`,width/2,height/2);
     pop();
+    }
+
+  function checkOverlap() {
+    let d = dist(circle1.x,circle1.y,circle.x,circle.y);
+    if (d < circle1.size/2 + circle.size/2) {
+    state = `captured`;
+    }
     }
 
  
