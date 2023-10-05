@@ -30,6 +30,8 @@ let circle = {
   function draw() {
     background(255,0,0);
 
+
+    //  ARROW POSITION
         if (keyIsDown(LEFT_ARROW)) {
         circle.vx = -circle.speed;
         }
@@ -54,6 +56,8 @@ let circle = {
     
         ellipse(circle.x, circle.y, circle.size);
 
+  // ANXIOUS CIRCLE
+
   circle1.vx = random(-circle1.speed, circle1.speed);
   circle1.vy = random(-circle1.speed, circle1.speed);
 
@@ -66,6 +70,8 @@ let circle = {
   circle1.y = constrain(circle1.y, 0, width);
 }
 
+// STATES
+
         if (state === `lovebug`) {
         lovebug();
         }
@@ -75,6 +81,13 @@ let circle = {
   
   function lovebug() {
     checkOverlap();
+    }
+
+  function checkOverlap() {
+    let d = dist(circle1.x,circle1.y,circle.x,circle.y);
+    if (d < circle1.size/2 + circle.size/2) {
+    state = `captured`;
+    }
     }
   
   function captured() {
@@ -86,9 +99,4 @@ let circle = {
     pop();
     }
 
-  function checkOverlap() {
-    let d = dist(circle1.x,circle1.y,circle.x,circle.y);
-    if (d < circle1.size/2 + circle.size/2) {
-      state = `captured`;
-    }
-  }
+ 
