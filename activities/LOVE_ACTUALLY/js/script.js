@@ -10,8 +10,8 @@ let circle1 = {
     y: 150,
     vx: 0,
     vy: 0,
-    speed: 10,
-    size: 100
+    speed: 20,
+    size: 30
   }
 
 let circle = {
@@ -20,20 +20,24 @@ let circle = {
     vx: 0,
     vy: 0,
     speed: 5,
-    size: 100
+    size: 30
   }
 
 let state = `lovebug`;
-  
-  function setup() {
-    createCanvas(1500, 700);
-  }
-  
-  function draw() {
-    background(255,0,0);
 
+function preload() {
+}
+  
+function setup() {
+createCanvas(1500, 700);
+}
+  
+function draw() {
+background(214,42,mouseY);
+textFont(`Tillana`)
 
     //  ARROW POSITION
+
         if (keyIsDown(LEFT_ARROW)) {
         circle.vx = -circle.speed;
         }
@@ -58,43 +62,39 @@ let state = `lovebug`;
     
         ellipse(circle.x, circle.y, circle.size);
 
-  // ANXIOUS CIRCLE
+        // ANXIOUS CIRCLE
 
-  circle1.vx = random(-circle1.speed, circle1.speed);
-  circle1.vy = random(-circle1.speed, circle1.speed);
+        circle1.vx = random(-circle1.speed, circle1.speed);
+        circle1.vy = random(-circle1.speed, circle1.speed);
 
-  circle1.x = circle1.x + circle1.vx;
-  circle1.y = circle1.y + circle1.vy;
+        circle1.x = circle1.x + circle1.vx;
+        circle1.y = circle1.y + circle1.vy;
 
-  ellipse(circle1.x, circle1.y, circle1.size);
+        ellipse(circle1.x, circle1.y, circle1.size);
 
-  circle1.x = constrain(circle1.x, 0, width);
-  circle1.y = constrain(circle1.y, 0, width);
+        circle1.x = constrain(circle1.x, 0, width);
+        circle1.y = constrain(circle1.y, 0, width);
 
- // STATES
+        // STATES
 
- if (state === `lovebug`) {
-  lovebug();
-  }
-  else if (state === `captured`) {
-  captured();
-  }
-
+        if (state === `lovebug`) {
+        lovebug();
+        }
+        else if (state === `captured`) {
+        captured();
+        }
 }
 
- 
-
-  
   function lovebug() {
     checkOverlap();
     }
   
   function captured() {
     push();
-    textSize(64);
-    fill(255);
+    textSize(200);
+    fill(random(0, 255));
     textAlign(CENTER,CENTER);
-    text(`CAPTURED THE LOVE BUG!`,width/2,height/2);
+    text(`LOVE BUG!`,width/2,height/2);
     pop();
     }
 
@@ -103,6 +103,4 @@ let state = `lovebug`;
     if (d < circle1.size/2 + circle.size/2) {
     state = `captured`;
     }
-    }
-
- 
+}
