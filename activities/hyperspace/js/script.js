@@ -9,9 +9,11 @@
 
 const numStars = 500;
 let stars = [];
+var w = window.innerWidth;
+var h = window.innerHeight;
 
 function setup() {
-  createCanvas(600, 600);
+  createCanvas(w, h);
   stroke(255);
   strokeWeight(2);
   
@@ -71,3 +73,10 @@ class Star {
 function onScreen(x, y) {
   return x >= 0 && x <= width && y >= 0 && y <= height;  
 }
+
+window.onresize = function() {
+    // assigns new values for width and height variables
+    w = window.innerWidth;
+    h = window.innerHeight;  
+    canvas.size(w,h);
+  }
