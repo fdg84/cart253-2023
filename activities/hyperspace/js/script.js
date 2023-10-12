@@ -1,8 +1,11 @@
 /**
- * NEW
+ * Hyperspace
  * Francis Ouellette
  * 
- * Hyperspace!
+ * Stars Tutorial:
+ * https://www.youtube.com/watch?v=p0I5bNVcYP8&ab_channel=BarneyCodes
+ * 
+ * 
  */
 
 "use strict";
@@ -25,7 +28,7 @@ function setup() {
 function draw() {
   background(0, 50);
   
-  const acc = map(mouseX, 0, width, 0.005, 0.2);
+  const acc = map(mouseX, 0, width, 0.005, 0.02);
   
   stars = stars.filter(star => {
     star.draw();
