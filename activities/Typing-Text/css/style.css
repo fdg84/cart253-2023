@@ -2,9 +2,11 @@ html, body {
   margin: 0;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Xanh+Mono&display=swap');
+
 body {
   
-  font-family: sans-serif;
+  font-family: Xanh Mono;
   
   display: flex;
   justify-content: center;

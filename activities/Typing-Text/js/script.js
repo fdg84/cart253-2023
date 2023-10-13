@@ -1,8 +1,8 @@
 /**
- * TEMPLATE
+ * AUTO TYPING TEXT
  * Francis Ouellette
  * 
- * Test!
+ * https://codepen.io/varunpvp/pen/jeVLrG
  */
 
 "use strict";
@@ -19,15 +19,15 @@ function draw() {
 
 }
 
-// get the element
+// get element
 const text = document.querySelector('.typing-text');
 
-// make a words array
+// words array
 const words = [
-  "eat.",
-  "sleep.",
-  "code.",
-  "repeat."
+  "WELCOME TO SPACE.",
+  "TIME TO EXPLORE.",
+  "THE COSMIC GALAXY.",
+  "AND BEYOND."
 ];
 
 // start typing effect
@@ -36,7 +36,7 @@ setTyper(text, words);
 function setTyper(element, words) {
 
   const LETTER_TYPE_DELAY = 75;
-  const WORD_STAY_DELAY = 2000;
+  const WORD_STAY_DELAY = 900;
 
   const DIRECTION_FORWARDS = 0;
   const DIRECTION_BACKWARDS = 1;
