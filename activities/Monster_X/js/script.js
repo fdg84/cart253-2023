@@ -1,5 +1,5 @@
 /**
- * Monster REMIX - PLANETS
+ * REMIX - PLANETS
  * Francis Ouellette
  */
 
