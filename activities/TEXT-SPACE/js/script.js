@@ -86,9 +86,15 @@ function setTyper(element, words) {
   }
 }
 
+// // /**
+// //  * NEXT PAGE (CODE)
+// //  */
+
+// let nextPage = ();
+
 // // Defining next page function
 // function nextPage() {
-//   <a href="index.html"></a>
+//   <a href="stars.html"></a>
 //  }
  
 //  function mousePressed() {

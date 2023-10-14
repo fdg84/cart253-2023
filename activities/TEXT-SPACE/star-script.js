@@ -39,9 +39,7 @@ class Star {
   constructor(x, y) {
     this.pos = createVector(x, y);
     this.prevPos = createVector(x, y);
-    
     this.vel = createVector(0, 0);
-    
     this.ang = atan2(y - (height/2), x - (width/2));
   }
   
