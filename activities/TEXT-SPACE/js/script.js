@@ -22,7 +22,7 @@ const words = [
 
   "░█░▓▒░▓█░▒▓░",
   "WELCOME TO SPACE.",
-  "CLICK & EXPLORE."
+  "CLICK NOW."
 ];
 
 // start typing effect
