@@ -5,8 +5,16 @@
 
 "use strict"; 
 
-let earthImage;
 let ufoImage;
+let earthImage;
+let marsImage;
+let neptuneImage;
+let jupiterImage;
+let plutoImage;
+let mercuryImage;
+let venusImage;
+let saturnImage;
+let uranusImage;
 
 function preload() {
     ufoImage = loadImage('assets/images/ufo.png');
@@ -31,7 +39,7 @@ let user = {
 let earth = {
     x: 2000, 
     y: 250,
-    size: 100,
+    size: 10,
     vx: 0,
     vy: 0,
     fill: 255
@@ -40,7 +48,7 @@ let earth = {
   let mars = {
     x: 2000,
     y: 250,
-    size: 100,
+    size: 10,
     vx: 0,
     vy: 0,
     fill: 255
@@ -49,7 +57,7 @@ let earth = {
   let neptune = {
     x: 2000,
     y: 250,
-    size: 100,
+    size: 10,
     vx: 0,
     vy: 0,
     fill: 255
@@ -58,7 +66,7 @@ let earth = {
   let jupiter = {
     x: 2000,
     y: 250,
-    size: 100,
+    size: 10,
     vx: 0,
     vy: 0,
     fill: 255
@@ -67,7 +75,7 @@ let earth = {
   let pluto = {
     x: 2000,
     y: 250,
-    size: 100,
+    size: 10,
     vx: 0,
     vy: 0,
     fill: 255
@@ -76,7 +84,7 @@ let earth = {
   let mercury = {
     x: 2000,
     y: 250,
-    size: 100,
+    size: 10,
     vx: 0,
     vy: 0,
     fill: 255
@@ -85,7 +93,7 @@ let earth = {
   let venus = {
     x: 2000,
     y: 250,
-    size: 100,
+    size: 10,
     vx: 0,
     vy: 0,
     fill: 255
@@ -94,7 +102,7 @@ let earth = {
   let saturn = {
     x: 2000,
     y: 250,
-    size: 100,
+    size: 10,
     vx: 0,
     vy: 0,
     fill: 255
@@ -103,7 +111,7 @@ let earth = {
   let uranus = {
     x: 2000,
     y: 250,
-    size: 100,
+    size: 10,
     vx: 0,
     vy: 0,
     fill: 255
@@ -211,28 +219,28 @@ let earth = {
           imageMode(CENTER);
           image(earthImage,earth.x,earth.y,150,150);
 
-          // imageMode(CENTER);
-          // image(marsImage,mars.x,mars.y,150,150);
+          imageMode(CENTER);
+          image(marsImage,mars.x,mars.y,150,150);
 
-          // imageMode(CENTER);
-          // image(neptuneImage,neptune.x,neptune.y,150,150);
+          imageMode(CENTER);
+          image(neptuneImage,neptune.x,neptune.y,150,150);
 
-          // imageMode(CENTER);
-          // image(jupiterImage,jupiter.x,jupiter.y,150,150);
+          imageMode(CENTER);
+          image(jupiterImage,jupiter.x,jupiter.y,150,150);
 
-          // imageMode(CENTER);
-          // image(plutoImage,pluto.x,pluto.y,150,150);
+          imageMode(CENTER);
+          image(plutoImage,pluto.x,pluto.y,150,150);
 
-          // imageMode(CENTER);
-          // image(mercuryImage,mercury.x,mercury.y,150,150);
+          imageMode(CENTER);
+          image(mercuryImage,mercury.x,mercury.y,150,150);
 
-          // imageMode(CENTER);
-          // image(venusImage,venus.x,venus.y,150,150);
+          imageMode(CENTER);
+          image(venusImage,venus.x,venus.y,150,150);
 
-          // imageMode(CENTER);
-          // image(saturnImage,saturn.x,saturn.y,150,150);
+          imageMode(CENTER);
+          image(saturnImage,saturn.x,saturn.y,150,150);
 
-          // imageMode(CENTER);
-          // image(uranusImage,uranus.x,uranus.y,150,150);
+          imageMode(CENTER);
+          image(uranusImage,uranus.x,uranus.y,150,150);
   } 
 
