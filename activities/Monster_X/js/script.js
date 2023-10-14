@@ -43,18 +43,20 @@ let earth = {
     background(0);
 
 
-    // edit here to add floating text when floating on planets
-    let i = 0;
-    while(i <= 10){
-        print("i is:" + i);
-        ellipse(random(width), random(height), 100);
-        i = i+1;
-    }
-    print("!!!!!");
+    // // edit here to add floating text when floating on planets
+    // let i = 0;
+    // while(i <= 10){
+    //     print("i is:" + i);
+    //     ellipse(random(width), random(height), 100);
+    //     i = i+1;
+    // }
+    // print("!!!!!");
 
-    if(mouseX > earth.x){
-        background(0, 0, 0);
-    }
+    // if(mouseX > earth.x){
+    //     background(0, 0, 0);
+    // }
+
+    //////////////////////////////////////////////////////
   
     // // earth movement
     // earth.x = earth.x + earth.vx;
