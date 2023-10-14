@@ -19,7 +19,7 @@ let earth = {
     size: 100,
     vx: 0,
     vy: 0,
-    speed: 5,
+    // speed: 5,
     fill: 255
   };
   
@@ -34,7 +34,7 @@ let earth = {
     createCanvas(windowWidth, windowHeight);
   
     earth.y = random(0, height);
-    earth.vx = earth.speed;
+    // earth.vx = earth.speed;
   
     noCursor();
   }
@@ -42,6 +42,8 @@ let earth = {
   function draw() {
     background(0);
 
+
+    // edit here to add floating text when floating on planets
     let i = 0;
     while(i <= 10){
         print("i is:" + i);
