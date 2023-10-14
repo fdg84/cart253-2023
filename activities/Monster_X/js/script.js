@@ -175,44 +175,46 @@ let earth = {
     user.x = mouseX;
     user.y = mouseY;
   
-    // // Check for catching earth
-    // let d = dist(user.x, user.y, earth.x, earth.y);
-    // if (d < earth.size / 2 + user.size / 2) {
-    //   noLoop();
-    // }
+    // Check for planets (Hover Info)
+    let d = dist(user.x, user.y, earth.x, earth.y);
+    if (d < earth.size / 2 + user.size / 2) {
+      noLoop();
+    }
   
-    // Display planets 
-    fill(earth.fill.r, earth.fill.g, earth.fill.b);
-    ellipse(earth.x, earth.y, earth.size);
+    // // Display ufo & planets (NOT NEEDED?)
+
+    // fill(earth.fill.r, earth.fill.g, earth.fill.b);
+    // ellipse(earth.x, earth.y, earth.size);
   
-    fill(mars.fill.r, mars.fill.g, mars.fill.b);
-    ellipse(mars.x, mars.y, mars.size);
+    // fill(mars.fill.r, mars.fill.g, mars.fill.b);
+    // ellipse(mars.x, mars.y, mars.size);
 
-    fill(neptune.fill.r, neptune.fill.g, neptune.fill.b);
-    ellipse(neptune.x, neptune.y, neptune.size);
+    // fill(neptune.fill.r, neptune.fill.g, neptune.fill.b);
+    // ellipse(neptune.x, neptune.y, neptune.size);
 
-    fill(jupiter.fill.r, jupiter.fill.g, jupiter.fill.b);
-    ellipse(jupiter.x, jupiter.y, jupiter.size);
+    // fill(jupiter.fill.r, jupiter.fill.g, jupiter.fill.b);
+    // ellipse(jupiter.x, jupiter.y, jupiter.size);
 
-    fill(pluto.fill.r, pluto.fill.g, pluto.fill.b);
-    ellipse(pluto.x, pluto.y, pluto.size);
+    // fill(pluto.fill.r, pluto.fill.g, pluto.fill.b);
+    // ellipse(pluto.x, pluto.y, pluto.size);
 
-    fill(mercury.fill.r, mercury.fill.g, mercury.fill.b);
-    ellipse(mercury.x, mercury.y, mercury.size);
+    // fill(mercury.fill.r, mercury.fill.g, mercury.fill.b);
+    // ellipse(mercury.x, mercury.y, mercury.size);
 
-    fill(venus.fill.r, venus.fill.g, venus.fill.b);
-    ellipse(venus.x, venus.y, venus.size);
+    // fill(venus.fill.r, venus.fill.g, venus.fill.b);
+    // ellipse(venus.x, venus.y, venus.size);
 
-    fill(saturn.fill.r, saturn.fill.g, saturn.fill.b);
-    ellipse(saturn.x, saturn.y, saturn.size);
+    // fill(saturn.fill.r, saturn.fill.g, saturn.fill.b);
+    // ellipse(saturn.x, saturn.y, saturn.size);
 
-    fill(uranus.fill.r, uranus.fill.g, uranus.fill.b);
-    ellipse(uranus.x, uranus.y, uranus.size);
+    // fill(uranus.fill.r, uranus.fill.g, uranus.fill.b);
+    // ellipse(uranus.x, uranus.y, uranus.size);
 
-          // Display user
-          fill(user.fill);
-          ellipse(user.x, user.y, user.size);
+    // fill(user.fill);
+    // ellipse(user.x, user.y, user.size);
 
+          // Display ufo & planets
+         
           imageMode(CENTER);
           image(ufoImage,mouseX,mouseY,150,150);
 
