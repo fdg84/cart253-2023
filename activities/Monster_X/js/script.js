@@ -1,25 +1,25 @@
 /**
- * Monster Dodge
+ * Monster REMIX - PLANETS
  * Francis Ouellette
  */
 
 "use strict"; 
 
-let faceImage;
-let wormImage;
+let earthImage;
+let ufoImage;
 
 function preload() {
-    faceImage = loadImage('assets/images/face.png');
-    wormImage = loadImage('assets/images/worm.png');
+    earthImage = loadImage('assets/images/earth.png');
+    ufoImage = loadImage('assets/images/ufo.png');
 }
 
-let monster = {
+let earth = {
     x: 0,
     y: 250,
     size: 100,
     vx: 0,
     vy: 0,
-    speed: 15,
+    speed: 5,
     fill: 255
   };
   
@@ -33,8 +33,8 @@ let monster = {
   function setup() {
     createCanvas(windowWidth, windowHeight);
   
-    monster.y = random(0, height);
-    monster.vx = monster.speed;
+    earth.y = random(0, height);
+    earth.vx = earth.speed;
   
     noCursor();
   }
@@ -50,41 +50,41 @@ let monster = {
     }
     print("!!!!!");
 
-    if(mouseX > monster.x){
-        background(255, 0, 0);
+    if(mouseX > earth.x){
+        background(0, 0, 0);
     }
   
-    // monster movement
-    monster.x = monster.x + monster.vx;
-    monster.y = monster.y + monster.vy;
+    // // earth movement
+    // earth.x = earth.x + earth.vx;
+    // earth.y = earth.y + earth.vy;
   
-    if (monster.x > width) {
-        monster.x = 0;
-        monster.y = random(0, height);
-    }
+    // if (earth.x > width) {
+    //     earth.x = 0;
+    //     earth.y = random(0, height);
+    // }
   
     // User movement
     user.x = mouseX;
     user.y = mouseY;
   
-    // Check for catching monster
-    let d = dist(user.x, user.y, monster.x, monster.y);
-    if (d < monster.size / 2 + user.size / 2) {
-      noLoop();
-    }
+    // // Check for catching earth
+    // let d = dist(user.x, user.y, earth.x, earth.y);
+    // if (d < earth.size / 2 + user.size / 2) {
+    //   noLoop();
+    // }
   
-    // Display monster 
-    fill(monster.fill.r, monster.fill.g, monster.fill.b);
-    ellipse(monster.x, monster.y, monster.size);
+    // Display earth 
+    fill(earth.fill.r, earth.fill.g, earth.fill.b);
+    ellipse(earth.x, earth.y, earth.size);
   
     // Display user
     fill(user.fill);
     ellipse(user.x, user.y, user.size);
 
     imageMode(CENTER);
-    image(wormImage,mouseX,mouseY,250,250);
+    image(ufoImage,mouseX,mouseY,150,150);
 
     imageMode(CENTER);
-    image(faceImage,monster.x,monster.y,350,350);
+    image(earthImage,earth.x,earth.y,150,150);
   } 
 
