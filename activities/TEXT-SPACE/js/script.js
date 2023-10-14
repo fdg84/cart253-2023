@@ -68,6 +68,8 @@ function setTyper(element, words) {
       }
     }
 
+    // ADD else STATEMENT to declare next event (above)
+
     const textToType = word.substring(0, letterIndex);
 
     element.textContent = textToType;
@@ -90,6 +92,8 @@ function setTyper(element, words) {
 // //  * NEXT PAGE (CODE)
 // //  */
 
+// // ADD if STATEMENT ?
+
 // let nextPage = ();
 
 // // Defining next page function
@@ -101,3 +105,24 @@ function setTyper(element, words) {
 //    // CALLING next page()
 //    nextPage();
 //  }
+
+
+//////////////////////////////////////////////////
+
+// // +++ NEW TEST +++
+
+// let state = `title`;
+
+// function mousePressed() {
+//   if (state === `title`) {
+//     state = `stars`;
+//   }
+// }
+
+// function stars() {
+//   nextPage();
+// }
+
+// function nextPage() {
+//   <a href="stars.html"></a>
+// }
