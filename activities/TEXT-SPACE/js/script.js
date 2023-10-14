@@ -85,3 +85,13 @@ function setTyper(element, words) {
 
   }
 }
+
+// // Defining next page function
+// function nextPage() {
+//   <a href="index.html"></a>
+//  }
+ 
+//  function mousePressed() {
+//    // CALLING next page()
+//    nextPage();
+//  }
