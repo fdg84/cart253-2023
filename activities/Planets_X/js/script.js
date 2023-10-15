@@ -5,8 +5,8 @@
 
 "use strict"; 
 
-let ufoImage;
-let earthImage;
+let ufoImage, earthImage;
+//let earthImage;
 let marsImage;
 let neptuneImage;
 let jupiterImage;
@@ -17,7 +17,7 @@ let saturnImage;
 let uranusImage;
 
 function preload() {
-    ufoImage = loadImage('assets/images/ufo.png');
+    // ufoImage = loadImage('assets/images/ufo.png');
     earthImage = loadImage('assets/images/earth.png');
     marsImage = loadImage('assets/images/mars.png');
     neptuneImage = loadImage('assets/images/neptune.png');
@@ -29,17 +29,14 @@ function preload() {
     uranusImage = loadImage('assets/images/uranus.png');
 }
 
-let user = {
-  };
+// let user = {
+//   };
 
-let earth = {
-  };
+let earth = {};
 
-  let mars = {
-  };
+  let mars = {};
   
-  let neptune = {
-  };
+  let neptune = {};
   
   let jupiter = {
   };
@@ -58,80 +55,81 @@ let earth = {
 
   let uranus = {
   };
-
-  function setup() {
-    createCanvas(windowWidth, windowHeight);
+  let ufo = {}
+  let mercuryText = {}
+  // let mercuryBox = {}
   
-    // circle.x = constrain(circle.x, 0, width); // Constrain
-    earth.x = random(0, height);
-    earth.y = random(0, height);
-    mars.x = random(0, height);
-    mars.y = random(0, height);
-    neptune.x = random(0, height);
-    neptune.y = random(0, height);
-    jupiter.x = random(0, height);
-    jupiter.y = random(0, height);
-    pluto.x = random(0, height);
-    pluto.y = random(0, height);
-    mercury.x = random(0, height);
-    mercury.y = random(0, height);
-    venus.x = random(0, height);
-    venus.y = random(0, height);
-    saturn.x = random(0, height);
-    saturn.y = random(0, height);
-    uranus.x = random(0, height);
-    uranus.y = random(0, height);
+  function setup() {
+    
+    ufo = document.getElementById("ufo");  
+    
+    mercury = document.getElementById("mercury");  
+    venus = document.getElementById("venus");
+    
+    createCanvas(windowWidth, windowHeight);
+    const widthDivide = width/8
+    
+    mercury.style.left = random(0, widthDivide) + "px";
+    mercury.style.top = random(200, height-200) + "px";
+    
+    venus.style.left = widthDivide + random(50, widthDivide-50) + "px";
+    venus.style.top = random(200, height-200) + "px";
+    
+    earth.x = 2*widthDivide + random(50, widthDivide-50);
+    earth.y = random(200, height-200);
+    
+    mars.x = 3*widthDivide + random(50, widthDivide-50);
+    mars.y = random(200, height-200);
+    
+    jupiter.x = 4*widthDivide + random(50, widthDivide-50);
+    jupiter.y = random(200, height-200);
+    
+    saturn.x = 5*widthDivide + random(50, widthDivide-50);
+    saturn.y = random(200, height-200);
+    
+    uranus.x = 6*widthDivide + random(50, widthDivide-50);
+    uranus.y = random(200, height-200);
+    
+    neptune.x = 7*widthDivide + random(50, widthDivide-50);
+    neptune.y = random(200, height-200);
+    
+    background(0);
+    
+    imageMode(CENTER);
+    image(earthImage,earth.x,earth.y,150,150);
+    imageMode(CENTER);
+    image(marsImage,mars.x,mars.y,150,150);
+    imageMode(CENTER);
+    image(neptuneImage,neptune.x,neptune.y,150,150);
+    imageMode(CENTER);
+    image(jupiterImage,jupiter.x,jupiter.y,150,150);
+    
+    textSize(20)
+    fill(0, 102, 153);
+    text("Mercury", parseInt(mercury.style.left, 10) + 35, parseInt(mercury.style.top, 10) + 75);
+    
+    // imageMode(CENTER);
+    // image(venusImage,venus.x,venus.y,150,150);
+    imageMode(CENTER);
+    image(saturnImage,saturn.x,saturn.y,150,150);
+    imageMode(CENTER);
+    image(uranusImage,uranus.x,uranus.y,150,150);
+          
 
     noCursor();
+    document.onmousemove = updateUfoPosition;
+    
   }
   
-  function draw() {
-    background(0);
+  function updateUfoPosition(e) {
+    ufo.style.left = e.x - 75 + "px";
+    ufo.style.top = e.y -75 + "px";
+  }
 
+  function onHover(img) {
+    img.style.opacity=.5
+  }
 
-    // // edit here to add floating text when hover on planets
-    // let i = 0;
-    // while(i <= 10){
-    //     print("i is:" + i);
-    //     ellipse(random(width), random(height), 100);
-    //     i = i+1;
-    // }
-
-    // if(mouseX > earth.x){
-    //     background(0, 0, 0);
-    // }
-  
-    // User movement
-    user.x = mouseX;
-    user.y = mouseY;
-  
-    // Check for planets (Hover Info)
-    // let d = dist(user.x, user.y, earth.x, earth.y);
-    // if (d < earth.size / 2 + user.size / 2) {
-    //   noLoop();
-    // }
-
-          // Display ufo & planets
-         
-          imageMode(CENTER);
-          image(ufoImage,mouseX,mouseY,150,150);
-          imageMode(CENTER);
-          image(earthImage,earth.x,earth.y,150,150);
-          imageMode(CENTER);
-          image(marsImage,mars.x,mars.y,150,150);
-          imageMode(CENTER);
-          image(neptuneImage,neptune.x,neptune.y,150,150);
-          imageMode(CENTER);
-          image(jupiterImage,jupiter.x,jupiter.y,150,150);
-          imageMode(CENTER);
-          image(plutoImage,pluto.x,pluto.y,150,150);
-          imageMode(CENTER);
-          image(mercuryImage,mercury.x,mercury.y,150,150);
-          imageMode(CENTER);
-          image(venusImage,venus.x,venus.y,150,150);
-          imageMode(CENTER);
-          image(saturnImage,saturn.x,saturn.y,150,150);
-          imageMode(CENTER);
-          image(uranusImage,uranus.x,uranus.y,150,150);
-  } 
-
+  function offHover(img) {
+    img.style.opacity=1
+  }

@@ -13,7 +13,7 @@
     <script src="js/libraries/p5.sound.min.js"></script>
 
     <script src="js/script.js"></script>
-    <style>
+    <!-- <style>
       .container {
         position: relative;
         width: 50%;
@@ -53,18 +53,14 @@
         transform: translate(-50%, -50%);
         text-align: center;
       }
-      </style>
+      </style> -->
   </head>
 
   <body>
-
-<div class="container">
-  <img src="earth.png" alt="Earth" class="image">
-  <div class="overlay">
-    <div class="text">EARTH</div>
-  </div>
-</div>
-
+    <img src="assets/images/ufo.png" id="ufo" height=150 width=150 style="position:absolute;">
+    <img src="assets/images/mercury.png" id="mercury" height=150 width=150 onmouseout="offHover(this);" onmouseover="onHover(this);" style="position:absolute;">
+    <img src="assets/images/venus.png" id="venus" height=150 width=150 onmouseout="offHover(this);" onmouseover="onHover(this);" style="position:absolute;">
+    
   </body>
 
 </html>
