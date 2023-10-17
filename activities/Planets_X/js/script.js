@@ -5,16 +5,7 @@
 
 "use strict"; 
 
-let ufoImage, earthImage;
-//let earthImage;
-let marsImage;
-let neptuneImage;
-let jupiterImage;
-let plutoImage;
-let mercuryImage;
-let venusImage;
-let saturnImage;
-let uranusImage;
+let ufoImage, earthImage, marsImage, neptuneImage, jupiterImage, mercuryImage, venusImage, saturnImage, uranusImage;
 
 function preload() {
     // ufoImage = loadImage('assets/images/ufo.png');
@@ -22,7 +13,6 @@ function preload() {
     marsImage = loadImage('assets/images/mars.png');
     neptuneImage = loadImage('assets/images/neptune.png');
     jupiterImage = loadImage('assets/images/jupiter.png');
-    plutoImage = loadImage('assets/images/pluto.png');
     mercuryImage = loadImage('assets/images/mercury.png');
     venusImage = loadImage('assets/images/venus.png');
     saturnImage = loadImage('assets/images/saturn.png');
@@ -36,21 +26,25 @@ let earth = {};
 let mars = {};
 let neptune = {};
 let jupiter = {};
-let pluto = {};
 let mercury = {};
 let venus = {};
 let saturn = {};
 let uranus = {};
-let ufo = {}
-let mercuryText = {}
+let ufo = {};
+let mercuryText = {};
 // let mercuryBox = {}
   
   function setup() {
     
-    ufo = document.getElementById("ufo");  
-    
+    earth = document.getElementById("earth");
+    mars = document.getElementById("mars");
+    neptune = document.getElementById("neptune");
+    jupiter = document.getElementById("jupiter");
     mercury = document.getElementById("mercury");  
     venus = document.getElementById("venus");
+    saturn = document.getElementById("saturn");
+    uranus = document.getElementById("uranus");
+    ufo = document.getElementById("ufo");  
     
     createCanvas(windowWidth, windowHeight);
     const widthDivide = width/8

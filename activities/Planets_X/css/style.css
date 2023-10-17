@@ -7,8 +7,4 @@ body {
   height: 100vh; /* Body is the height of the viewport */
   overflow: hidden; /* Hide anything that goes off the window size */
   /* background-image: linear-gradient(to right bottom, #000000, #11070c, #1a0e17, #1f1421, #21192d, #2e293e, #3c3a50, #4a4b63, #6d6d80, #92919e, #b7b7be, #dedede); */
-
 }
-
-
-
