@@ -126,3 +126,58 @@ function setTyper(element, words) {
 // function nextPage() {
 //   <a href="stars.html"></a>
 // }
+
+
+////////////////////////////////////////////
+////////////////////////////////////////////
+////////////////////////////////////////////
+
+function draw() {
+  background(0);
+
+  if (state === `title`) {
+    title();
+  }
+  else if (state === `space`) {
+    simulation();
+  }
+  else if (state === `planets`) {
+    love();
+  }
+}
+
+//
+
+function title() {
+  push();
+  textSize(64);
+  fill(200,100,100);
+  textAlign(CENTER,CENTER);
+  text(`LOVE?`,width/2,height/2);
+  pop();
+}
+
+function space() {
+  move();
+  checkOffscreen();
+  checkOverlap();
+  display();
+}
+
+function planets() {
+  push();
+  textSize(64);
+  fill(255,150,150);
+  textAlign(CENTER,CENTER);
+  text(`LOVE!`,width/2,height/2);
+  pop();
+}
+
+//
+
+function mousePressed() {
+  if (state === `title`) {
+    state = `space`;
+  }
+}
+
