@@ -161,3 +161,5 @@ let ufo = {};
     img.style.opacity=1
   }
   
+  // ADD ICON TO LINK HYPERSPACE ANIMATION AS EXTRA FEATURE
+  // <a href= 
