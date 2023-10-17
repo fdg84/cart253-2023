@@ -8,7 +8,7 @@
 let ufoImage, earthImage, marsImage, neptuneImage, jupiterImage, mercuryImage, venusImage, saturnImage, uranusImage;
 
 function preload() {
-    // ufoImage = loadImage('assets/images/ufo.png');
+    ufoImage = loadImage('assets/images/ufo.png');
     earthImage = loadImage('assets/images/earth.png');
     marsImage = loadImage('assets/images/mars.png');
     neptuneImage = loadImage('assets/images/neptune.png');
@@ -54,24 +54,42 @@ let mercuryText = {};
     
     venus.style.left = widthDivide + random(50, widthDivide-50) + "px";
     venus.style.top = random(200, height-200) + "px";
+
+    earth.style.left = 2*widthDivide + random(50, widthDivide-50) + "px";
+    earth.style.top = random(200, height-200) + "px";
+
+    mars.style.left = 3*widthDivide + random(50, widthDivide-50) + "px";
+    mars.style.top = random(200, height-200) + "px";
+
+    jupiter.style.left = 4*widthDivide + random(50, widthDivide-50) + "px";
+    jupiter.style.top = random(200, height-200) + "px";
+
+    saturn.style.left = 5*widthDivide + random(50, widthDivide-50) + "px";
+    saturn.style.top = random(200, height-200) + "px";
+
+    uranus.style.left = 6*widthDivide + random(50, widthDivide-50) + "px";
+    uranus.style.top = random(200, height-200) + "px";
+
+    neptune.style.left = 7*widthDivide + random(50, widthDivide-50) + "px";
+    neptune.style.top = random(200, height-200) + "px";
     
-    earth.x = 2*widthDivide + random(50, widthDivide-50);
-    earth.y = random(200, height-200);
+    // earth.x = 2*widthDivide + random(50, widthDivide-50);
+    // earth.y = random(200, height-200);
     
-    mars.x = 3*widthDivide + random(50, widthDivide-50);
-    mars.y = random(200, height-200);
+    // mars.x = 3*widthDivide + random(50, widthDivide-50);
+    // mars.y = random(200, height-200);
     
-    jupiter.x = 4*widthDivide + random(50, widthDivide-50);
-    jupiter.y = random(200, height-200);
+    // jupiter.x = 4*widthDivide + random(50, widthDivide-50);
+    // jupiter.y = random(200, height-200);
     
-    saturn.x = 5*widthDivide + random(50, widthDivide-50);
-    saturn.y = random(200, height-200);
+    // saturn.x = 5*widthDivide + random(50, widthDivide-50);
+    // saturn.y = random(200, height-200);
     
-    uranus.x = 6*widthDivide + random(50, widthDivide-50);
-    uranus.y = random(200, height-200);
+    // uranus.x = 6*widthDivide + random(50, widthDivide-50);
+    // uranus.y = random(200, height-200);
     
-    neptune.x = 7*widthDivide + random(50, widthDivide-50);
-    neptune.y = random(200, height-200);
+    // neptune.x = 7*widthDivide + random(50, widthDivide-50);
+    // neptune.y = random(200, height-200);
     
     background(0);
     
