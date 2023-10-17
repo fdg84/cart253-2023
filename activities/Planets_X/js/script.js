@@ -33,31 +33,17 @@ function preload() {
 //   };
 
 let earth = {};
-
-  let mars = {};
-  
-  let neptune = {};
-  
-  let jupiter = {
-  };
-
-  let pluto = {
-  };
-
-  let mercury = {
-  };
-
-  let venus = {
-  };
-
-  let saturn = {
-  };
-
-  let uranus = {
-  };
-  let ufo = {}
-  let mercuryText = {}
-  // let mercuryBox = {}
+let mars = {};
+let neptune = {};
+let jupiter = {};
+let pluto = {};
+let mercury = {};
+let venus = {};
+let saturn = {};
+let uranus = {};
+let ufo = {}
+let mercuryText = {}
+// let mercuryBox = {}
   
   function setup() {
     
