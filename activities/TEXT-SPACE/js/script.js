@@ -25,6 +25,13 @@ const words = [
   "CLICK NOW."
 ];
 
+// let title;
+// let wordIndex;
+// let letterIndex;
+// let space;
+// let planets;
+// let nextPage;
+
 // start typing effect
 setTyper(text, words);
 
@@ -149,28 +156,15 @@ function draw() {
 //
 
 function title() {
-  push();
-  textSize(64);
-  fill(200,100,100);
-  textAlign(CENTER,CENTER);
-  text(`LOVE?`,width/2,height/2);
-  pop();
+  
 }
 
 function space() {
-  move();
-  checkOffscreen();
-  checkOverlap();
-  display();
+
 }
 
 function planets() {
-  push();
-  textSize(64);
-  fill(255,150,150);
-  textAlign(CENTER,CENTER);
-  text(`LOVE!`,width/2,height/2);
-  pop();
+
 }
 
 //
