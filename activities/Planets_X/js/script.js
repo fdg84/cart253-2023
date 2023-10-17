@@ -68,6 +68,10 @@ let ufo = {};
     neptune.style.left = 7*widthDivide + random(50, widthDivide-50) + "px";
     neptune.style.top = random(200, height-200) + "px";
     
+    
+    
+    // width ?? to center text instead of current values
+
     textSize(20)
     fill(255);
     text("Mercury", parseInt(mercury.style.left, 10) + 39, parseInt(mercury.style.top, 10) + 80);
@@ -116,3 +120,4 @@ let ufo = {};
   function offHover(img) {
     img.style.opacity=1
   }
+  

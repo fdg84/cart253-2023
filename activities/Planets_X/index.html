@@ -7,12 +7,35 @@
     <title>PLANETS</title>
 
     <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Xanh+Mono&display=swap" rel="stylesheet"> -->
 
-    
     <script src="js/libraries/p5.min.js"></script>
     <script src="js/libraries/p5.sound.min.js"></script>
 
     <script src="js/script.js"></script>
+
+
+    <!-- NOT WORKING -->
+
+    <style>
+      .hide {
+        display: none;
+      }
+          
+      .myDIV:hover + .hide {
+        display: block;
+        color: white;
+        /* font-size: 200px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        text-align: center; */
+      }
+      </style>
+
     <!-- <style>
       .container {
         position: relative;
@@ -57,6 +80,10 @@
   </head>
 
   <body>
+
+    <!-- <div class="myDIV">HOVER OVER</div>
+    <div class="hide">HELLO</div> -->
+
     <img src="assets/images/ufo.png" id="ufo" height=150 width=150 style="position:absolute;">
     <img src="assets/images/mercury.png" id="mercury" height=150 width=150 onmouseout="offHover(this);" onmouseover="onHover(this);" style="position:absolute;">
     <img src="assets/images/venus.png" id="venus" height=150 width=150 onmouseout="offHover(this);" onmouseover="onHover(this);" style="position:absolute;">
