@@ -68,8 +68,6 @@ let ufo = {};
     neptune.style.left = 7*widthDivide + random(50, widthDivide-50) + "px";
     neptune.style.top = random(200, height-200) + "px";
     
-    background(0);
-    
     textSize(20)
     fill(255);
     text("Mercury", parseInt(mercury.style.left, 10) + 39, parseInt(mercury.style.top, 10) + 80);
@@ -80,11 +78,11 @@ let ufo = {};
 
     textSize(20)
     fill(255);
-    text("Earth", parseInt(earth.style.left, 10) + 48, parseInt(earth.style.top, 10) + 80);
+    text("Earth", parseInt(earth.style.left, 10) + 49, parseInt(earth.style.top, 10) + 80);
 
     textSize(20)
     fill(255);
-    text("Mars", parseInt(mars.style.left, 10) + 47, parseInt(mars.style.top, 10) + 80);
+    text("Mars", parseInt(mars.style.left, 10) + 48, parseInt(mars.style.top, 10) + 84);
 
     textSize(20)
     fill(255);
