@@ -71,45 +71,44 @@ let ufo = {};
     background(0);
     
     textSize(20)
-    fill(0, 102, 153);
-    text("Mercury", parseInt(mercury.style.left, 10) + 35, parseInt(mercury.style.top, 10) + 75);
+    fill(255);
+    text("Mercury", parseInt(mercury.style.left, 10) + 39, parseInt(mercury.style.top, 10) + 80);
 
     textSize(20)
-    fill(0, 102, 153);
-    text("Venus", parseInt(venus.style.left, 10) + 35, parseInt(venus.style.top, 10) + 75);
+    fill(255);
+    text("Venus", parseInt(venus.style.left, 10) + 45, parseInt(venus.style.top, 10) + 80);
 
     textSize(20)
-    fill(0, 102, 153);
-    text("Earth", parseInt(earth.style.left, 10) + 35, parseInt(earth.style.top, 10) + 75);
+    fill(255);
+    text("Earth", parseInt(earth.style.left, 10) + 48, parseInt(earth.style.top, 10) + 80);
 
     textSize(20)
-    fill(0, 102, 153);
-    text("Mars", parseInt(mars.style.left, 10) + 35, parseInt(mars.style.top, 10) + 75);
+    fill(255);
+    text("Mars", parseInt(mars.style.left, 10) + 47, parseInt(mars.style.top, 10) + 80);
 
     textSize(20)
-    fill(0, 102, 153);
-    text("Jupiter", parseInt(jupiter.style.left, 10) + 35, parseInt(jupiter.style.top, 10) + 75);
+    fill(255);
+    text("Jupiter", parseInt(jupiter.style.left, 10) + 44, parseInt(jupiter.style.top, 10) + 80);
 
     textSize(20)
-    fill(0, 102, 153);
-    text("Saturn", parseInt(saturn.style.left, 10) + 35, parseInt(saturn.style.top, 10) + 75);
+    fill(255);
+    text("Saturn", parseInt(saturn.style.left, 10) + 45, parseInt(saturn.style.top, 10) + 80);
 
     textSize(20)
-    fill(0, 102, 153);
-    text("Uranus", parseInt(uranus.style.left, 10) + 35, parseInt(uranus.style.top, 10) + 75);
+    fill(255);
+    text("Uranus", parseInt(uranus.style.left, 10) + 45, parseInt(uranus.style.top, 10) + 85);
 
     textSize(20)
-    fill(0, 102, 153);
-    text("Neptune", parseInt(neptune.style.left, 10) + 35, parseInt(neptune.style.top, 10) + 75);
+    fill(255);
+    text("Neptune", parseInt(neptune.style.left, 10) + 39, parseInt(neptune.style.top, 10) + 85);
 
     noCursor();
     document.onmousemove = updateUfoPosition;
-  
   }
   
   function updateUfoPosition(e) {
-    ufo.style.left = e.x - 75 + "px";
-    ufo.style.top = e.y -75 + "px";
+    ufo.style.left = e.x - 80 + "px";
+    ufo.style.top = e.y -80 + "px";
   }
 
   function onHover(img) {
