@@ -30,7 +30,7 @@ let uranus = {};
 let neptune = {};
 let ufo = {};
 let planetName = ""
-let pg
+let c1, c2
   
   function setup() {
     
@@ -45,32 +45,31 @@ let pg
     ufo = document.getElementById("ufo");  
     
     createCanvas(windowWidth, windowHeight);
-    pg = createGraphics(windowWidth, windowHeight)
-
+    
     const widthDivide = width/8
     
-    mercury.style.left = random(0, widthDivide) + "px";
+    mercury.style.left = 20 + "px";
     mercury.style.top = random(200, height-200) + "px";
     
-    venus.style.left = widthDivide + random(50, widthDivide-200) + "px";
+    venus.style.left = widthDivide + "px";
     venus.style.top = random(200, height-200) + "px";
 
-    earth.style.left = 2*widthDivide + random(50, widthDivide-200) + "px";
+    earth.style.left = 2*widthDivide + "px";
     earth.style.top = random(200, height-200) + "px";
 
-    mars.style.left = 3*widthDivide + random(50, widthDivide-200) + "px";
+    mars.style.left = 3*widthDivide + "px";
     mars.style.top = random(200, height-200) + "px";
 
-    jupiter.style.left = 4*widthDivide + random(50, widthDivide-200) + "px";
+    jupiter.style.left = 4*widthDivide + "px";
     jupiter.style.top = random(200, height-200) + "px";
 
-    saturn.style.left = 5*widthDivide + random(50, widthDivide-200) + "px";
+    saturn.style.left = 5*widthDivide + "px";
     saturn.style.top = random(200, height-200) + "px";
 
-    uranus.style.left = 6*widthDivide + random(50, widthDivide-200) + "px";
+    uranus.style.left = 6*widthDivide + "px";
     uranus.style.top = random(200, height-200) + "px";
 
-    neptune.style.left = 7*widthDivide + random(50, widthDivide-200) + "px";
+    neptune.style.left = 7*widthDivide + "px";
     neptune.style.top = random(200, height-200) + "px";
     
     // LARGE TEXT APPEARS (HOVER) 
@@ -148,13 +147,17 @@ let pg
     // fill(255);
     // text("Neptune", parseInt(neptune.style.left, 10) + 39, parseInt(neptune.style.top, 10) + 85);
 
+    c1 = color(0, 0, 0);
+    c2 = color(204, 102, 0);
+    
     noCursor();
     document.onmousemove = updateUfoPosition;
   }
   
   function draw(){
-    background(0)
-    
+    //background(0)
+    setGradient(0, 0, width, height, c2, c1);
+
     if(planetName != ""){
       textSize(200)
       fill(255);
@@ -162,8 +165,22 @@ let pg
       textFont("Xanh Mono")
       text(planetName,width/2,height/2);
     }
+    
   }
 
+  function setGradient(x, y, w, h, c1, c2) {
+    //noFill();
+  
+    for (let i = x; i <= x + w; i++) {
+      let inter = map(i, x, x + .3*w, 0, 1);
+      let c = lerpColor(c1, c2, inter);
+      stroke(c);
+      line(i, y, i, y + h);
+    }
+    
+  }
+
+  
   function updateUfoPosition(e) {
     ufo.style.left = e.x - 80 + "px";
     ufo.style.top = e.y -80 + "px";
