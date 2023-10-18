@@ -25,13 +25,6 @@ const words = [
   "CLICK NOW."
 ];
 
-// let title;
-// let wordIndex;
-// let letterIndex;
-// let space;
-// let planets;
-// let nextPage;
-
 // start typing effect
 setTyper(text, words);
 
@@ -95,6 +88,15 @@ function setTyper(element, words) {
   }
 }
 
+
+
+
+
+
+
+
+
+
 // // /**
 // //  * NEXT PAGE (CODE)
 // //  */
@@ -139,61 +141,61 @@ function setTyper(element, words) {
 ////////////////////////////////////////////
 ////////////////////////////////////////////
 
-function draw() {
-  background(0);
+// function draw() {
+//   background(0);
 
-  if (state === `title`) {
-    title();
-  }
-  else if (state === `planets`) {
-    galaxy();
-  }
-  // else if (state === `space`) {
-  //   stars();
-  // }
-}
+//   if (state === `title`) {
+//     title();
+//   }
+//   else if (state === `planets`) {
+//     galaxy();
+//   }
+//   // else if (state === `space`) {
+//   //   stars();
+//   // }
+// }
 
-//
+// //
 
-function title() {
+// function title() {
   
-}
+// }
 
-function planets() {
+// function planets() {
 
-}
+// }
 
-function space() {
+// function space() {
 
-}
+// }
 
-//
+// //
 
-function mousePressed() {
-  console.log("Hello")
-  if (state === `title`) {
-    state = `planets`;
-  }
-}
+// function mousePressed() {
+//   console.log("Hello")
+//   if (state === `title`) {
+//     state = `planets`;
+//   }
+// }
 
-// $('.page').each(function(i,e){
-//   $(this).click(function(event){
-//     var x = event.pageX;
-//     var y = event.pageY;
+// // $('.page').each(function(i,e){
+// //   $(this).click(function(event){
+// //     var x = event.pageX;
+// //     var y = event.pageY;
     
-//     var nextItem = i + 1;
-//     if (nextItem >= $('.page').length){
-//       nextItem = 0;
-//     }
+// //     var nextItem = i + 1;
+// //     if (nextItem >= $('.page').length){
+// //       nextItem = 0;
+// //     }
     
-//     $('.page:eq('+ nextItem +')').css('z-index', parseInt($(this).css('z-index')) + 1);
-//     $('.page:eq('+ nextItem +')').css('clip-path', 'circle(0% at '+ x +'px '+ y +'px)');
+// //     $('.page:eq('+ nextItem +')').css('z-index', parseInt($(this).css('z-index')) + 1);
+// //     $('.page:eq('+ nextItem +')').css('clip-path', 'circle(0% at '+ x +'px '+ y +'px)');
     
-//     anime({
-//       targets: $('.page')[nextItem],
-//       update: function(anim) {
-//         $('.page:eq('+ nextItem +')').css('clip-path', 'circle('+ (anim.progress*2) +'% at '+ x +'px '+ y +'px)');
-//       }
-//     });
-//   });
-// });
+// //     anime({
+// //       targets: $('.page')[nextItem],
+// //       update: function(anim) {
+// //         $('.page:eq('+ nextItem +')').css('clip-path', 'circle('+ (anim.progress*2) +'% at '+ x +'px '+ y +'px)');
+// //       }
+// //     });
+// //   });
+// // });
