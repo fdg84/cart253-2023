@@ -70,8 +70,12 @@ function onScreen(x, y) {
 }
 
 window.onresize = function() {
-    // assigns new values for width and height variables
     w = window.innerWidth;
     h = window.innerHeight;  
     canvas.size(w,h);
   }
+
+function mousePressed() {
+  window.location.href = "/index2.html"
+}
+  

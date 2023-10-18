@@ -88,10 +88,8 @@ function setTyper(element, words) {
   }
 }
 
-
-
 function mousePressed() {
-  window.location.href = "/index2.html"
+  window.location.href = "/stars.html"
 }
 
 
