@@ -1,18 +1,9 @@
 /**
- * Hyperspace
+ * WELCOME TO SPACE
  * Francis Ouellette
- * 
- * Stars Tutorial:
- * https://www.youtube.com/watch?v=p0I5bNVcYP8&ab_channel=BarneyCodes
- * 
- * 
  */
 
 "use strict";
-
-// /**
-//  * TYPING TEXT (CODE)
-//  */
 
 // get element
 const text = document.querySelector('.typing-text');
@@ -32,14 +23,11 @@ function setTyper(element, words) {
 
   const LETTER_TYPE_DELAY = 50;
   const WORD_STAY_DELAY = 900;
-
   const DIRECTION_FORWARDS = 0;
   const DIRECTION_BACKWARDS = 1;
-
   var direction = DIRECTION_FORWARDS;
   var wordIndex = 0;
   var letterIndex = 0;
-
   var wordTypeInterval;
 
   startTyping();
@@ -52,29 +40,26 @@ function setTyper(element, words) {
     const word = words[wordIndex];
 
     if (direction == DIRECTION_FORWARDS) {
-      letterIndex++;
+        letterIndex++;
 
-      if (letterIndex == word.length) {
+    if (letterIndex == word.length) {
         direction = DIRECTION_BACKWARDS;
         clearInterval(wordTypeInterval);
         setTimeout(startTyping, WORD_STAY_DELAY);
       }
 
-    } else if (direction == DIRECTION_BACKWARDS) {
-      letterIndex--;
+  } else if (direction == DIRECTION_BACKWARDS) {
+        letterIndex--;
 
-      if (letterIndex == 0) {
+    if (letterIndex == 0) {
         nextWord();
       }
-    }
-
+  }
     const textToType = word.substring(0, letterIndex);
-
     element.textContent = textToType;
   }
 
   function nextWord() {
-
     letterIndex = 0;
     direction = DIRECTION_FORWARDS;
     wordIndex++;
@@ -82,7 +67,6 @@ function setTyper(element, words) {
     if (wordIndex == words.length) {
       wordIndex = 0;
     }
-
   }
 }
 
@@ -90,4 +74,3 @@ function setTyper(element, words) {
 function mousePressed() {
   window.location.href = "/index2.html"
 }
-
