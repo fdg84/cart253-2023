@@ -29,6 +29,8 @@ let saturn = {};
 let uranus = {};
 let neptune = {};
 let ufo = {};
+let planetName = ""
+let pg
   
   function setup() {
     
@@ -43,6 +45,8 @@ let ufo = {};
     ufo = document.getElementById("ufo");  
     
     createCanvas(windowWidth, windowHeight);
+    pg = createGraphics(windowWidth, windowHeight)
+
     const widthDivide = width/8
     
     mercury.style.left = random(0, widthDivide) + "px";
@@ -72,45 +76,45 @@ let ufo = {};
     // LARGE TEXT APPEARS (HOVER) 
     // IMAGES GET DISPLACED IF TEXT IS TOO LARGE - EX: (200)
 
-    textSize(20)
-    fill(255);
-    textAlign(CENTER,CENTER);
-    text("MERCURY",width/2,height/2);
+    // textSize(20)
+    // fill(255);
+    // textAlign(CENTER,CENTER);
+    // text(planetName,width/2,height/2);
 
-    textSize(20)
-    fill(255);
-    textAlign(CENTER,CENTER);
-    text("VENUS",width/2,height/2);
+    // textSize(20)
+    // fill(255);
+    // textAlign(CENTER,CENTER);
+    // text("VENUS",width/2,height/2);
 
-    textSize(20)
-    fill(255);
-    textAlign(CENTER,CENTER);
-    text("EARTH",width/2,height/2);
+    // textSize(20)
+    // fill(255);
+    // textAlign(CENTER,CENTER);
+    // text("EARTH",width/2,height/2);
 
-    textSize(20)
-    fill(255);
-    textAlign(CENTER,CENTER);
-    text("MARS",width/2,height/2);
+    // textSize(20)
+    // fill(255);
+    // textAlign(CENTER,CENTER);
+    // text("MARS",width/2,height/2);
 
-    textSize(20)
-    fill(255);
-    textAlign(CENTER,CENTER);
-    text("JUPITER",width/2,height/2);
+    // textSize(20)
+    // fill(255);
+    // textAlign(CENTER,CENTER);
+    // text("JUPITER",width/2,height/2);
 
-    textSize(20)
-    fill(255);
-    textAlign(CENTER,CENTER);
-    text("SATURN",width/2,height/2);
+    // textSize(20)
+    // fill(255);
+    // textAlign(CENTER,CENTER);
+    // text("SATURN",width/2,height/2);
 
-    textSize(20)
-    fill(255);
-    textAlign(CENTER,CENTER);
-    text("URANUS",width/2,height/2);
+    // textSize(20)
+    // fill(255);
+    // textAlign(CENTER,CENTER);
+    // text("URANUS",width/2,height/2);
 
-    textSize(20)
-    fill(255);
-    textAlign(CENTER,CENTER);
-    text("NEPTUNE",width/2,height/2);
+    // textSize(20)
+    // fill(255);
+    // textAlign(CENTER,CENTER);
+    // text("NEPTUNE",width/2,height/2);
 
     // textSize(20)
     // fill(255);
@@ -148,6 +152,18 @@ let ufo = {};
     document.onmousemove = updateUfoPosition;
   }
   
+  function draw(){
+    background(0)
+    
+    if(planetName != ""){
+      textSize(200)
+      fill(255);
+      textAlign(CENTER,CENTER);
+      textFont("Xanh Mono")
+      text(planetName,width/2,height/2);
+    }
+  }
+
   function updateUfoPosition(e) {
     ufo.style.left = e.x - 80 + "px";
     ufo.style.top = e.y -80 + "px";
@@ -155,10 +171,13 @@ let ufo = {};
 
   function onHover(img) {
     img.style.opacity=.3
+    planetName = img.id
+    console.log(img.id)
   }
 
   function offHover(img) {
     img.style.opacity=1
+    planetName = ""
   }
   
   // ADD ICON TO LINK HYPERSPACE ANIMATION AS EXTRA FEATURE
