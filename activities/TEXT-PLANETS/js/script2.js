@@ -5,172 +5,131 @@
 
 "use strict"; 
 
-let ufoImage, earthImage, marsImage, neptuneImage, jupiterImage, mercuryImage, venusImage, saturnImage, uranusImage;
+let mercury;
+let venus;
+let earth;
+let mars;
+let jupiter;
+let saturn;
+let uranus;
+let neptune;
+let ufo;
+
+let c1, c2
+let widthDivide
+
+let gravity = -3
+
+const planets = [
+  {
+    name: "Mercury",
+    direction: 1,
+    y:100,
+    vy:1
+  },
+  {
+    name: "Venus",
+    direction: -1,
+    y:300,
+    vy:1
+  },
+  {
+    name: "Earth",
+    direction: 1,
+    y:120,
+    vy:1
+  }
+    ,
+  {
+    name: "Mars",
+    direction: -1,
+    y:100,
+    vy:1
+  }
+    ,
+  {
+    name: "Jupiter",
+    direction: 1,
+    y:200,
+    vy:1
+  },
+  {
+    name: "Saturn",
+    direction: -1,
+    y:320,
+    vy:1
+  },
+  {
+    name: "Uranus",
+    direction: 1,
+    y:100,
+    vy:1
+  },
+  {
+    name: "Neptune",
+    direction: -1,
+    y:150,
+    vy:1
+  },
+]
 
 function preload() {
-  
-    // mercuryImage = loadImage('assets/images/mercury.png');
-    // venusImage = loadImage('assets/images/venus.png');
-    // earthImage = loadImage('assets/images/earth.png');
-    // marsImage = loadImage('assets/images/mars.png');
-    // jupiterImage = loadImage('assets/images/jupiter.png');
-    // saturnImage = loadImage('assets/images/saturn.png');
-    // uranusImage = loadImage('assets/images/uranus.png');
-    // neptuneImage = loadImage('assets/images/neptune.png');
-    // ufoImage = loadImage('assets/images/ufo.png');
+  mercury = loadImage('assets/images/mercury.png');
+  venus = loadImage('assets/images/venus.png');
+  earth = loadImage('assets/images/earth.png');
+  mars = loadImage('assets/images/mars.png');
+  jupiter = loadImage('assets/images/jupiter.png');
+  saturn = loadImage('assets/images/saturn.png');
+  uranus = loadImage('assets/images/uranus.png');
+  neptune = loadImage('assets/images/neptune.png');
+  ufo = loadImage('assets/images/ufo.png');
 }
 
-let mercury = {};
-let venus = {};
-let earth = {};
-let mars = {};
-let jupiter = {};
-let saturn = {};
-let uranus = {};
-let neptune = {};
-let ufo = {};
-let planetName = ""
-let c1, c2
-  
-  function setup() {
-    
-    mercury = document.getElementById("mercury");  
-    venus = document.getElementById("venus");
-    earth = document.getElementById("earth");
-    mars = document.getElementById("mars");
-    jupiter = document.getElementById("jupiter");
-    saturn = document.getElementById("saturn");
-    uranus = document.getElementById("uranus");
-    neptune = document.getElementById("neptune");
-    ufo = document.getElementById("ufo");  
-    
-    createCanvas(windowWidth, windowHeight);
-    
-    const widthDivide = width/8
-    
-    mercury.style.left = 20 + "px";
-    mercury.style.top = random(200, height-200) + "px";
-    
-    venus.style.left = widthDivide + "px";
-    venus.style.top = random(200, height-200) + "px";
+function setup() {
+  createCanvas(windowWidth, windowHeight);
+  widthDivide = width/8
+  c1 = color(0, 0, 0);
+  c2 = color(204, 102, 0);
+  noCursor();
+}
 
-    earth.style.left = 2*widthDivide + "px";
-    earth.style.top = random(200, height-200) + "px";
-
-    mars.style.left = 3*widthDivide + "px";
-    mars.style.top = random(200, height-200) + "px";
-
-    jupiter.style.left = 4*widthDivide + "px";
-    jupiter.style.top = random(200, height-200) + "px";
-
-    saturn.style.left = 5*widthDivide + "px";
-    saturn.style.top = random(200, height-200) + "px";
-
-    uranus.style.left = 6*widthDivide + "px";
-    uranus.style.top = random(200, height-200) + "px";
-
-    neptune.style.left = 7*widthDivide + "px";
-    neptune.style.top = random(200, height-200) + "px";
-    
-    // LARGE TEXT APPEARS (HOVER) 
-    // IMAGES GET DISPLACED IF TEXT IS TOO LARGE - EX: (200)
-
-    // textSize(20)
-    // fill(255);
-    // textAlign(CENTER,CENTER);
-    // text(planetName,width/2,height/2);
-
-    // textSize(20)
-    // fill(255);
-    // textAlign(CENTER,CENTER);
-    // text("VENUS",width/2,height/2);
-
-    // textSize(20)
-    // fill(255);
-    // textAlign(CENTER,CENTER);
-    // text("EARTH",width/2,height/2);
-
-    // textSize(20)
-    // fill(255);
-    // textAlign(CENTER,CENTER);
-    // text("MARS",width/2,height/2);
-
-    // textSize(20)
-    // fill(255);
-    // textAlign(CENTER,CENTER);
-    // text("JUPITER",width/2,height/2);
-
-    // textSize(20)
-    // fill(255);
-    // textAlign(CENTER,CENTER);
-    // text("SATURN",width/2,height/2);
-
-    // textSize(20)
-    // fill(255);
-    // textAlign(CENTER,CENTER);
-    // text("URANUS",width/2,height/2);
-
-    // textSize(20)
-    // fill(255);
-    // textAlign(CENTER,CENTER);
-    // text("NEPTUNE",width/2,height/2);
-
-    // textSize(20)
-    // fill(255);
-    // text("Mercury", parseInt(mercury.style.left, 10) + 39, parseInt(mercury.style.top, 10) + 80);
-
-    // textSize(20)
-    // fill(255);
-    // text("Venus", parseInt(venus.style.left, 10) + 45, parseInt(venus.style.top, 10) + 80);
-
-    // textSize(20)
-    // fill(255);
-    // text("Earth", parseInt(earth.style.left, 10) + 49, parseInt(earth.style.top, 10) + 80);
-
-    // textSize(20)
-    // fill(255);
-    // text("Mars", parseInt(mars.style.left, 10) + 48, parseInt(mars.style.top, 10) + 84);
-
-    // textSize(20)
-    // fill(255);
-    // text("Jupiter", parseInt(jupiter.style.left, 10) + 44, parseInt(jupiter.style.top, 10) + 80);
-
-    // textSize(20)
-    // fill(255);
-    // text("Saturn", parseInt(saturn.style.left, 10) + 45, parseInt(saturn.style.top, 10) + 80);
-
-    // textSize(20)
-    // fill(255);
-    // text("Uranus", parseInt(uranus.style.left, 10) + 45, parseInt(uranus.style.top, 10) + 85);
-
-    // textSize(20)
-    // fill(255);
-    // text("Neptune", parseInt(neptune.style.left, 10) + 39, parseInt(neptune.style.top, 10) + 85);
-
-    c1 = color(0, 0, 0);
-    c2 = color(204, 102, 0);
-    
-    noCursor();
-    document.onmousemove = updateUfoPosition;
-  }
-  
-  function draw(){
-    //background(0)
+function draw(){
     setGradient(0, 0, width, height, c2, c1);
-
-    if(planetName != ""){
-      textSize(200)
-      fill(255);
-      textAlign(CENTER,CENTER);
-      textFont("Xanh Mono")
-      text(planetName,width/2,height/2);
-    }
+    
+    image(mercury, 0, planets[0].y)
+    image(venus, widthDivide, planets[1].y)
+    image(earth, widthDivide*2, planets[2].y)
+    image(mars, widthDivide*3, planets[3].y)
+    image(jupiter, widthDivide*4, planets[4].y)
+    image(saturn, widthDivide*5, planets[5].y)
+    image(uranus, widthDivide*6, planets[6].y)
+    image(neptune, widthDivide*7, planets[7].y)
+    
+    image(ufo, mouseX, mouseY, 50, 50)
+    
+    textSize(200)
+    fill(255);
+    textAlign(CENTER,CENTER);
+    textFont("Xanh Mono")
+    text(planets[Math.floor(mouseX/widthDivide)].name,width/2,height/2);
+    
+    planets.forEach(planet => {
+      planet.y = planet.y + planet.direction*planet.vy
+      
+      if (planet.y <= 100 || planet.y >= 700){
+        planet.direction = planet.direction*-1
+        planet.vy = planet.vy*planet.direction
+        //(planet.direction === -1 ) ? planet.y = 700 : planet.y = 100 
+        
+      }
+      planet.vy = planet.vy + .5*planet.direction
+      
+      
+    })
     
   }
 
   function setGradient(x, y, w, h, c1, c2) {
-    //noFill();
-  
     for (let i = x; i <= x + w; i++) {
       let inter = map(i, x, x + .3*w, 0, 1);
       let c = lerpColor(c1, c2, inter);
@@ -178,20 +137,4 @@ let c1, c2
       line(i, y, i, y + h);
     }
     
-  }
-
-  
-  function updateUfoPosition(e) {
-    ufo.style.left = e.x - 80 + "px";
-    ufo.style.top = e.y -80 + "px";
-  }
-
-  function onHover(img) {
-    img.style.opacity=.3
-    planetName = img.id
-  }
-
-  function offHover(img) {
-    img.style.opacity=1
-    planetName = ""
   }

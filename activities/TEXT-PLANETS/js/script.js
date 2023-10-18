@@ -91,7 +91,6 @@ function setTyper(element, words) {
 
 
 function mousePressed() {
-  console.log("Hello")
   window.location.href = "/index2.html"
 }
 
