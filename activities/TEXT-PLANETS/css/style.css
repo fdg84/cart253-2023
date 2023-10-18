@@ -1,0 +1,64 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Xanh+Mono&display=swap');
+
+body {
+  
+  font-family: Xanh Mono;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #000000;
+  color: hsl(191, 15%, 28%);
+}
+
+h1 {
+  margin: 0;
+}
+
+.typing-text::after {
+  content: "|";
+  animation: blink ease 1s infinite;
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 0;
+  } 50% {
+    opacity: 1;
+  }
+}
+
+/* .page {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.usage {
+  position: absolute;
+  top: 40px;
+  line-height: 50px;
+  z-index: 1000;
+  color: white;
+  font-size: 20px;
+  width: 100%;
+  text-align: center;
+  font-family: "Arial Black", Gadget, sans-serif;
+  pointer-events: none;
+}
+
+h2{
+  color: white;
+  font-family: arial;
+  font-weight: bold;
+  font-size: 3em;
+} */
