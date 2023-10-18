@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Xanh+Mono&display=swap');
+
+body {
+  font-family: Xanh Mono;
+
+  padding: 0;
+  margin: 0;
+  display: grid; /* Set up the grid and justify/align to center */
+  justify-content: center;
+  align-content: center;
+  height: 100vh; /* Body is the height of the viewport */
+  overflow: hidden; /* Hide anything that goes off the window size */
+  
+  background-image: linear-gradient(
+  90deg,
+  hsl(33deg 100% 46%) 0%,
+  hsl(27deg 66% 47%) 8%,
+  hsl(19deg 45% 41%) 13%,
+  hsl(318deg 17% 26%) 18%,
+  hsl(238deg 27% 20%) 23%,
+  hsl(238deg 27% 15%) 28%,
+  hsl(238deg 27% 9%) 33%,
+  hsl(0deg 0% 0%) 38%,
+  hsl(0deg 0% 0%) 44%,
+  hsl(0deg 0% 0%) 51%,
+  hsl(0deg 0% 0%) 59%,
+  hsl(0deg 0% 0%) 69%,
+  hsl(0deg 0% 0%) 81%,
+  hsl(0deg 0% 0%) 100%
+);
+}
+

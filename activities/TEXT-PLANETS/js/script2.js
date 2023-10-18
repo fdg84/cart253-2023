@@ -189,13 +189,9 @@ let c1, c2
   function onHover(img) {
     img.style.opacity=.3
     planetName = img.id
-    console.log(img.id)
   }
 
   function offHover(img) {
     img.style.opacity=1
     planetName = ""
   }
-  
-  // ADD ICON TO LINK HYPERSPACE ANIMATION AS EXTRA FEATURE
-  // <a href= 
