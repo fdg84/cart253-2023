@@ -117,9 +117,9 @@ function draw(){
   // keep track of trail frame mouse positions
   trailCount++
   if(trailCount > 2) {
-    trail.pop();
-    trail.unshift({x:pwinMouseX,y:pwinMouseY});
-    trailCount = 0;
+     trail.pop();
+     trail.unshift({x:pwinMouseX,y:pwinMouseY});
+     trailCount = 0;
   }
 
   // draw planet names
