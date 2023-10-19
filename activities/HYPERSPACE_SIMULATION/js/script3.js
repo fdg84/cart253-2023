@@ -144,7 +144,7 @@ function draw(){
     })
 }
 
-// draw background
+// draw background - linear interpolation
 function setGradient(x, y, w, h, c1, c2) {
   for (let i = x; i <= x + w; i++) {
       let inter = map(i, x, x + .3*w, 0, 1);
