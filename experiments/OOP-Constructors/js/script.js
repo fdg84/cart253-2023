@@ -2,7 +2,7 @@
  * TEMPLATE
  * Francis Ouellette
  * 
- * Test!
+ * ++++!
  */
 
 "use strict";
