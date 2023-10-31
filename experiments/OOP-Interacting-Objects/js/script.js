@@ -9,23 +9,23 @@
 
 // Our garden
 let garden = {
-    // An array to store the individual flowers
-    flowers: [],
-    // How many flowers in the garden
-    numFlowers: 20,
-    // An array of bees
-    bees: [],
-     // How many bees in the garden
-     numBees: 20,
-    // The color of the grass (background)
-    grassColor: {
-      r: 120,
-      g: 180,
-      b: 120
-    }
-  }; 
+  // An array to store the individual flowers
+  flowers: [],
+  // How many flowers in the garden
+  numFlowers: 20,
+  // An array to our the bees
+  bees: [],
+  // How many bees in the garden
+  numBees: 5,
+  // The color of the grass (background)
+  grassColor: {
+    r: 120,
+    g: 180,
+    b: 120
+  }
+};
 
-  // setup() creates the canvas and the flowers in the garden
+// setup() creates the canvas and the flowers in the garden
 function setup() {
   createCanvas(600, 600);
 
@@ -57,34 +57,46 @@ function setup() {
     // Add the bee to the array of bees
     garden.bees.push(bee);
   }
+
 }
 
-  // draw()
+// draw()
 // Displays our flowers
 function draw() {
-    // Display the grass
-    background(garden.grassColor.r, garden.grassColor.g, garden.grassColor.b);
-  
-    // Loop through all the flowers in the array and display them
-    for (let i = 0; i < garden.flowers.length; i++) {
-      let flower = garden.flowers[i];
-    //   displayFlower(flower);
-    if (flower.alive) {
-    flower.shrink();
-    flower.display();
+  // Display the grass
+  background(garden.grassColor.r, garden.grassColor.g, garden.grassColor.b);
 
+  // Loop through all the flowers in the array and display them
+  for (let i = 0; i < garden.flowers.length; i++) {
+    let flower = garden.flowers[i];
+    // Check if this flower is alive
+    if (flower.alive) {
+      // Update the flower by shrinking it and displaying it
+      flower.shrink();
+      flower.display();
     }
   }
 
   // Loop through all the bees in the array and display them
   for (let i = 0; i < garden.bees.length; i++) {
     let bee = garden.bees[i];
-    // Check if this bee is alive
+    // Check if this flower is alive
     if (bee.alive) {
-      // Update the bee by shrinking, moving and displaying it
+      // Shrink and move the bee
       bee.shrink();
       bee.move();
+
+      // NEW! Go through the entire flower array and try to pollinate the flowers!
+      // Note that we use j in our for-loop here because we're already inside
+      // a for-loop using i!
+      for (let j = 0; j < garden.flowers.length; j++) {
+        let flower = garden.flowers[j];
+        bee.tryToPollinate(flower);
+      }
+
+      // Display the bee
       bee.display();
     }
   }
+
 }
