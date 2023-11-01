@@ -10,7 +10,7 @@ class Cream {
     this.vy = 0;
     this.speed = 5;
     this.growRate = 0.1; // How much the Cream grows if it soothes
-    this.shrinkRate = 0.05; // How much smaller we get each frame
+    this.shrinkRate = 0.01; // How much smaller we get each frame
     this.jitteriness = 0.1; // How likely the Cream is to change direction
     this.alive = true; // The Cream starts out alive!
   }
@@ -27,7 +27,7 @@ class Cream {
   }
 
   // tryToSoothe() attempts to soothe the acne provided as a parameter
-  // If pollination succeeds (the two overlap) then both grow
+  // If soothing succeeds (the two overlap) then both grow
   tryToSoothe(acne) {
     // Calculate the distance between the Cream and the acne
     let d = dist(this.x, this.y, acne.x, acne.y);

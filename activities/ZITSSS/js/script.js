@@ -67,7 +67,7 @@ function draw() {
   background(face.imageColor.r, face.imageColor.g, face.imageColor.b);
 
   // draw() executes over and over once setup() has executed
-  var skin = color('#ffcb9a');
+  var skin = color('#CFD3D7');
   noStroke();
   ellipseMode(CENTER);
   
@@ -76,13 +76,13 @@ function draw() {
   fill(skin);
   ellipse(width/2, height/2, 500, 600);
    
-  // hair
-  fill('#333');
-  arc(width/2, height/2, 500, 600, PI+.3, -.4, OPEN);
+  // // hair
+  // fill('#333');
+  // arc(width/2, height/2, 500, 600, PI+.3, -.4, OPEN);
 
   // nose
   noStroke();
-  fill('#fdbc85');
+  fill('#998FA5');
   beginShape();
   vertex(400, 425);
   vertex(400, 525);

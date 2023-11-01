@@ -1,16 +1,16 @@
 class Acne {
 
   // The constructor() sets up a Acne's properties
-  constructor(x, y, size, petalColor) {
+  constructor(x, y, size, acneColor) {
     // Position and size information
     this.x = x;
     this.y = y;
     this.size = size;
     this.maxSize = size; 
-    this.stemThickness = 0;
-    this.petalThickness = 1;
-    this.maxPetalThickness = 10; 
-    this.petalColor = petalColor;
+    this.zitThickness = 0;
+    this.acneThickness = 1;
+    this.maxAcneThickness = 10; 
+    this.acneColor = acneColor;
     this.centreColor = {
       r: 255,
       g: 0,
@@ -23,29 +23,29 @@ class Acne {
   // Shrinks the Acne
   shrink() {
     // Choose a random amount to shrink
-    let shrinkage = random(0, 0.1);
-    // Reduce the petal thickness (divide by 10 to make it less rapid)
-    this.petalThickness = this.petalThickness - shrinkage / 5;
+    let shrinkage = random(0, 0.05);
+    // Reduce the acne thickness (divide by 10 to make it less rapid)
+    this.acneThickness = this.acneThickness - shrinkage / 10;
     // Reduce the centre of the Acne
     this.size = this.size - shrinkage;
 
     // If any of the key properties reach 0 or less, the Acne is dead
-    if (this.petalThickness <= 0 || this.size <= 0) {
+    if (this.acneThickness <= 0 || this.size <= 0) {
       this.alive = false;
     }
   }
 
-  // NEW! soothe() handles the Acne being soothed (it grows)
+  // NEW! soothe() handles the Acne being soothed (it grows) REVERSE!!!
   soothe() {
     // Choose a random amount to grow
     let growth = random(0, 0.5);
-    // Increase the petal thickness (divide by 10 to make it less rapid)
-    this.petalThickness = this.petalThickness + growth / 5;
+    // Increase the acne thickness (divide by 10 to make it less rapid)
+    this.acneThickness = this.acneThickness + growth / 10;
     // Increase the centre of the Acne
     this.size = this.size + growth;
 
     // Constrain the elements
-    this.petalThickness = constrain(this.petalThickness, 0, this.maxPetalThickness);
+    this.acneThickness = constrain(this.acneThickness, 0, this.maxAcneThickness);
     this.size = constrain(this.size, 0, this.maxSize);
   }
 
@@ -53,12 +53,12 @@ class Acne {
   // Displays the Acne on the canvas
   display() {
     push();
-    // Set the stroke weight for the petals and the stem
-    strokeWeight(this.stemThickness);
+    // Set the stroke weight for the acnes and the stem
+    strokeWeight(this.zitThickness);
     // Draw a circle with a heavy outline for the Acne
-    strokeWeight(this.petalThickness);
+    strokeWeight(this.acneThickness);
     fill(this.centreColor.r, this.centreColor.g, this.centreColor.b);
-    stroke(this.petalColor.r, this.petalColor.g, this.petalColor.b);
+    stroke(this.acneColor.r, this.acneColor.g, this.acneColor.b);
     ellipse(this.x, this.y, this.size);
     pop();
   }
