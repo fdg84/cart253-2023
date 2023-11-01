@@ -1,4 +1,5 @@
-class Flower {
+class Acne
+ {
 
   // The constructor() sets up a flower's properties
   constructor(x, y, size, stemLength, petalColor) {

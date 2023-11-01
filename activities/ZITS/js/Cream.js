@@ -1,4 +1,4 @@
-class Bee {
+class Cream {
 
   constructor(x, y) {
     this.x = x;
