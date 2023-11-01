@@ -1,7 +1,7 @@
 body{
   margin: 0;
   padding: 0;
-  background: #557766;
+  background: #beb485;
 }
 
 .eyes{
@@ -32,5 +32,16 @@ body{
   left: 50%;
   transform: translate(-50%,-50%);
   border-radius: 50%;
-  border: 15px solid #999333;
+  border: 15px solid #2875b4;
+}
+
+.mouth{
+  width: 240px;
+  height: 120px;
+  background: #7a6464;
+  display: inline-block;
+  margin: 40px;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
 }
