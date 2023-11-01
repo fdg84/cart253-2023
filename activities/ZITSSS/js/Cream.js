@@ -3,19 +3,19 @@ class Cream {
   constructor(x, y) {
     this.x = x;
     this.y = y;
-    this.size = 70;
+    this.size = 40;
     this.minSize = 10; // If we get smaller than this minimum we're dead
-    this.maxSize = 140; // We can't get bigger than this
+    this.maxSize = 40; // We can't get bigger than this
     this.vx = 0;
     this.vy = 0;
     this.speed = 5;
-    this.growRate = 1; // How much the bee grows if it pollinates
+    this.growRate = 0.1; // How much the Cream grows if it soothes
     this.shrinkRate = 0.05; // How much smaller we get each frame
-    this.jitteriness = 0.1; // How likely the bee is to change direction
-    this.alive = true; // The Bee starts out alive!
+    this.jitteriness = 0.1; // How likely the Cream is to change direction
+    this.alive = true; // The Cream starts out alive!
   }
 
-  // shrink() causes the bee to get smaller over time
+  // shrink() causes the Cream to get smaller over time
   shrink() {
     // Shrink by reducing the size by a set amount
     this.size = this.size - this.shrinkRate;
@@ -26,24 +26,24 @@ class Cream {
     }
   }
 
-  // tryToPollinate() attempts to pollinate the flower provided as a parameter
+  // tryToSoothe() attempts to soothe the acne provided as a parameter
   // If pollination succeeds (the two overlap) then both grow
-  tryToPollinate(flower) {
-    // Calculate the distance between the bee and the flower
-    let d = dist(this.x, this.y, flower.x, flower.y);
+  tryToSoothe(acne) {
+    // Calculate the distance between the Cream and the acne
+    let d = dist(this.x, this.y, acne.x, acne.y);
     // If they overlap...
-    if (d < this.size / 2 + flower.size / 2) {
-      // The bee should grow
-      // Notice how we can call OTHER METHODS of the Bee by using "this"
-      // So this.grow() calls the grow() method for THIS bee
+    if (d < this.size / 2 + acne.size / 2) {
+      // The Cream should grow
+      // Notice how we can call OTHER METHODS of the Cream by using "this"
+      // So this.grow() calls the grow() method for THIS Cream
       this.grow();
-      // The flower should react to being pollinated so we call its method
+      // The acne should react to being soothed so we call its method
       // that handles that!
-      flower.pollinate();
+      acne.soothe();
     }
   }
 
-  // grow() causes the bee to get bigger up to a maximum (called by tryToPollinate())
+  // grow() causes the Cream to get bigger up to a maximum (called by tryToSoothe())
   grow() {
     // Grow by increasing the size by a set amount
     this.size = this.size + this.growRate;
@@ -51,7 +51,7 @@ class Cream {
     this.size = constrain(this.size, 0, this.maxSize);
   }
 
-  // move() moves the bee by potentially changing direction
+  // move() moves the Cream by potentially changing direction
   // and then changing position based on velocity
   move() {
     // First check if we should change direction
@@ -70,16 +70,8 @@ class Cream {
     this.y = constrain(this.y, 0, height);
   }
 
-  // display() draws our bee onto the canvas
+  // display() draws our Cream onto the canvas
   display() {
-    push();
-    // Wings on either side
-    fill(255, 255, 255);
-    noStroke();
-    ellipse(this.x - this.size / 2, this.y, this.size / 2);
-    ellipse(this.x + this.size / 2, this.y, this.size / 2);
-    pop();
-
     // Body
     push();
     fill(225, 225, 50);
@@ -87,12 +79,5 @@ class Cream {
     ellipse(this.x, this.y, this.size);
     pop();
 
-    // Eyes
-    push();
-    fill(0, 0, 0);
-    noStroke();
-    ellipse(this.x - this.size / 10, this.y, this.size / 10);
-    ellipse(this.x + this.size / 10, this.y, this.size / 10);
-    pop();
   }
 }
