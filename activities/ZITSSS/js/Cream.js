@@ -74,7 +74,7 @@ class Cream {
   display() {
     // Body
     push();
-    fill(225, 225, 50);
+    fill(0, 100, 255);
     noStroke();
     ellipse(this.x, this.y, this.size);
     pop();

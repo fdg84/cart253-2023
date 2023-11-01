@@ -18,12 +18,17 @@ let face = {
   creams: [],
   // How many creams in the face
   numCreams: 5,
-
+ // The color of the grass (background)
+ imageColor: {
+  r: 0,
+  g: 0,
+  b: 20
+}
 };
 
 // setup() creates the canvas and the acne in the face
 function setup() {
-  createCanvas(600, 600);
+  createCanvas(800, 800);
 
   // Create our acne by counting up to the number of the acne
   for (let i = 0; i < face.numAcne; i++) {
@@ -53,14 +58,62 @@ function setup() {
     // Add the cream to the array of creams
     face.creams.push(cream);
   }
-
 }
 
 // draw()
 // Displays our acne
 function draw() {
-  // // Display the grass
-  // background(face.grassColor.r, face.grassColor.g, face.grassColor.b);
+  // Display the grass
+  background(face.imageColor.r, face.imageColor.g, face.imageColor.b);
+
+  // draw() executes over and over once setup() has executed
+  var skin = color('#ffcb9a');
+  noStroke();
+  ellipseMode(CENTER);
+  
+  // face
+  noStroke();
+  fill(skin);
+  ellipse(width/2, height/2, 500, 600);
+   
+  // hair
+  fill('#333');
+  arc(width/2, height/2, 500, 600, PI+.3, -.4, OPEN);
+
+  // nose
+  noStroke();
+  fill('#fdbc85');
+  beginShape();
+  vertex(400, 425);
+  vertex(400, 525);
+  vertex(430, 500);
+  endShape(CLOSE);
+  
+  // eyes
+  fill('white');
+  ellipse(300, 420, 50, 50);
+  ellipse(500, 420, 50, 50);
+  fill('#111');
+  ellipse(300, 420, 15, 15);
+  ellipse(500, 420, 15, 15);
+  
+  // eye brow
+  stroke('#333');
+  strokeWeight(5);
+  noFill();
+  arc(300, 420, 80, 80, PI+.9, -.9);
+  arc(500, 420, 80, 80, PI+.9, -.9);
+  
+  
+  // lips
+  strokeWeight(20);
+  stroke('#f28865');
+  arc(400, 550, 150, 100, .9, PI-.9);
+  noStroke();
+  
+  fill(skin);
+  ellipse(150, 410, 50, 100);
+  ellipse(650, 410, 50, 100);
 
   // Loop through all the acne in the array and display them
   for (let i = 0; i < face.acne.length; i++) {
