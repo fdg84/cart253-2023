@@ -71,6 +71,24 @@ function draw() {
   // Display the background
   background(face.imageColor.r, face.imageColor.g, face.imageColor.b);
 
+  let acneCount = 0;
+  let creamCount = 0;
+
+  for (let i = 0; i < face.numAcne; i++) {
+    if (face.acne[i].alive === false) {
+        acneCount++;
+    }
+  }
+  for (let i = 0; i < face.numCreams; i++) {
+    if (face.cream[i].alive === false) {
+      creamCount++;
+  }
+  }
+
+  if (acneCount === numAcne) {
+      state = `ending`;
+      }
+
 // draw() executes over and over once setup() has executed
 var skin = color('#465956');
 noStroke();
@@ -130,6 +148,15 @@ ellipse(650, 410, 50, 100);
   }
 }
 
+else if (state === `ending`) {
+  // In the ending state we display the ending
+  fill(255);
+  text(titleString, width / 2, height / 2);
+  textSize(26);
+  strokeWeight(0.5);
+  textAlign(CENTER, TOP);
+  }
+
   // nose
   noStroke();
   fill('#7d9692');
@@ -161,6 +188,7 @@ ellipse(650, 410, 50, 100);
   noStroke();
   
 
+
   //   // DO SAME WITH CREAM === 0 or false
   //   // And we change to the ending state if the Acne is done
   //   if (acne.alive === false) {
@@ -177,6 +205,7 @@ ellipse(650, 410, 50, 100);
   //   strokeWeight(0.5);
   //   textAlign(CENTER, TOP);
   // }
+
 
 }
 
