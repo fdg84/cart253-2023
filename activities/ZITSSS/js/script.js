@@ -25,6 +25,11 @@ let face = {
 }
 };
 
+let titleString = "Soothe The Acne";
+let endingString = "Goodbye Zits";
+
+let state = `title`; // We start in the title state
+
 // setup() creates the canvas and the acne in the face
 function setup() {
   createCanvas(800, 800);
@@ -64,6 +69,19 @@ function setup() {
 function draw() {
   // Display the background
   background(face.imageColor.r, face.imageColor.g, face.imageColor.b);
+
+//   if (state === `title`) {
+//     // In the title state we display the title
+//     fill(255);
+//     text(titleString, width / 2, height / 2);
+//   }
+//   else if (state === `animation`) {
+//     // In the animation state we animate the circle
+//     circle.x = circle.x + circle.vx;
+//     circle.y = circle.y + circle.vy;
+
+//     ellipse(circle.x, circle.y, circle.size);
+
 
   // draw() executes over and over once setup() has executed
   var skin = color('#465956');
@@ -141,4 +159,25 @@ function draw() {
       }
   }
 
+  //     // NEW!
+//     // And we change to the ending state if the circle reaches the right side
+//     if (circle.x > width) {
+//       state = `ending`;
+//     }
+//   }
+//   else if (state === `ending`) {
+//     // In the ending state we display the ending
+//     fill(255, 0, 0);
+//     text(endingString, width / 2, height / 2)
+//   }
+// }
+
+}
+
+function mousePressed() {
+  // If any key is pressed, we check if the current state is the title state
+  if (state === `title`) {
+    // If it is, we switch to the animation state
+    state = `animation`;
+  }
 }
