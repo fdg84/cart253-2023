@@ -2,12 +2,18 @@
  * ZITS - HEAL THE ACNE!
  * Francis Ouellette
  * 
+ * Face Design
+ * https://codepen.io/jgog/pen/ammXQL
  */
 
 "use strict";
 
-// Our face
+let titleString = "Soothe The Acne";
+let endingString = "Goodbye Zits";
 
+let state = `title`; // We start in the title state
+
+// Our face
 let face = {
   // An array to store the individual acne
   acne: [],
@@ -24,11 +30,6 @@ let face = {
   b: 10
 }
 };
-
-let titleString = "Soothe The Acne";
-let endingString = "Goodbye Zits";
-
-let state = `title`; // We start in the title state
 
 // setup() creates the canvas and the acne in the face
 function setup() {
@@ -70,17 +71,15 @@ function draw() {
   // Display the background
   background(face.imageColor.r, face.imageColor.g, face.imageColor.b);
 
-//   if (state === `title`) {
-//     // In the title state we display the title
-//     fill(255);
-//     text(titleString, width / 2, height / 2);
-//   }
-//   else if (state === `animation`) {
-//     // In the animation state we animate the circle
-//     circle.x = circle.x + circle.vx;
-//     circle.y = circle.y + circle.vy;
-
-//     ellipse(circle.x, circle.y, circle.size);
+  // if (state === `title`) {
+  //   // In the title state we display the title
+  //   fill(255);
+  //   text(titleString, width / 2, height / 2);
+  // }
+  // else if (state === `animation`) {
+  //   // In the animation state we animate the Acne
+  //   let acne = face.acne[j];
+  // }
 
 
   // draw() executes over and over once setup() has executed
@@ -159,8 +158,7 @@ function draw() {
       }
   }
 
-  //     // NEW!
-//     // And we change to the ending state if the circle reaches the right side
+//     // And we change to the ending state if the Acne is done
 //     if (circle.x > width) {
 //       state = `ending`;
 //     }
