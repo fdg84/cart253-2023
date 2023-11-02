@@ -1,16 +1,16 @@
 class Cream {
 
   constructor(x, y) {
-    this.x = x;
-    this.y = y;
+    this.x = random(250,550);
+    this.y = random(250,550);
     this.size = 40;
     this.minSize = 1; // If we get smaller than this minimum we're dead
     this.maxSize = 40; // We can't get bigger than this
     this.vx = 0;
     this.vy = 0;
-    this.speed = 5;
-    this.growRate = 0.5; // How much the Cream grows if it soothes
-    this.shrinkRate = 0.05; // How much smaller we get each frame
+    this.speed = 2;
+    this.growRate = 1; // How much the Cream grows if it soothes
+    this.shrinkRate = 0.03; // How much smaller we get each frame
     this.jitteriness = 0.1; // How likely the Cream is to change direction
     this.alive = true; // The Cream starts out alive!
   }

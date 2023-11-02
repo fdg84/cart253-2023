@@ -11,13 +11,13 @@
 let face = {
   // An array to store the individual acne
   acne: [],
-  // How many acne in the face
-  numAcne: 10,
-  // An array to our the creams
+  // How much acne in the face
+  numAcne: 9,
+  // An array of creams
   creams: [],
-  // How many creams in the face
-  numCreams: 7,
- // The color of the grass (background)
+  // How much cream in the face
+  numCreams: 5,
+ // The color of the background
   imageColor: {
   r: 0,
   g: 0,
@@ -29,9 +29,9 @@ let face = {
 function setup() {
   createCanvas(800, 800);
 
-  // Create our acne by counting up to the number of the acne
+  // Create our acne by counting up to the number of acne
   for (let i = 0; i < face.numAcne; i++) {
-    // Create variables for our arguments for clarity
+    // Create variables for arguments for clarity
     let x = random(0, width);
     let y = random(0, height);
     let size = random(10, 50);
@@ -41,15 +41,15 @@ function setup() {
       g: random(100, 255),
       b: random(100, 255)
     }
-    // Create a new acne using the arguments
+    // Create new acne using the arguments
     let acne = new Acne(x, y, size, acneLength, zitColor);
     // Add the acne to the array of acne
     face.acne.push(acne);
   }
 
-  // Create our creams by counting up to the number of creams
+  // Create creams by counting up to the number of creams
   for (let i = 0; i < face.numCreams; i++) {
-    // Create variables for our arguments for clarity
+    // Create variables for arguments for clarity
     let x = random(0, width);
     let y = random(0, height);
     // Create a new cream using the arguments
@@ -62,7 +62,7 @@ function setup() {
 // draw()
 // Displays our acne
 function draw() {
-  // Display the grass
+  // Display the background
   background(face.imageColor.r, face.imageColor.g, face.imageColor.b);
 
   // draw() executes over and over once setup() has executed
@@ -74,10 +74,6 @@ function draw() {
   noStroke();
   fill(skin);
   ellipse(width/2, height/2, 500, 600);
-   
-  // // hair
-  // fill('#333');
-  // arc(width/2, height/2, 500, 600, PI+.3, -.4, OPEN);
 
   // nose
   noStroke();
@@ -140,11 +136,10 @@ function draw() {
       for (let j = 0; j < face.acne.length; j++) {
         let acne = face.acne[j];
         cream.tryToSoothe(acne);
+        }
+        // Display the cream
+        cream.display();
       }
-
-      // Display the cream
-      cream.display();
-    }
   }
 
 }

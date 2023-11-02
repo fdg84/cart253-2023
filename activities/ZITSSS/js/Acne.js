@@ -3,12 +3,12 @@ class Acne {
   // The constructor() sets up a Acne's properties
   constructor(x, y, size, acneColor) {
     // Position and size information
-    this.x = x;
-    this.y = y;
+    this.x = random(250,550);
+    this.y = random(250,550);
     this.size = size;
     this.maxSize = size; 
     this.zitThickness = 1;
-    this.acneThickness = 0.5;
+    this.acneThickness = 0.2;
     this.maxAcneThickness = 5; 
     this.acneColor = acneColor;
     this.centreColor = {
@@ -23,7 +23,7 @@ class Acne {
   // Shrinks the Acne
   soothe() {
     // Choose a random amount to shrink
-    let growth = random(0, 0,5);
+    let growth = random(0, 5);
     // Reduce the acne thickness (divide by 10 to make it less rapid)
     this.acneThickness = this.acneThickness - growth / 10;
     // Reduce the centre of the Acne
