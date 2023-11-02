@@ -12,16 +12,16 @@ let face = {
   // An array to store the individual acne
   acne: [],
   // How much acne in the face
-  numAcne: 9,
+  numAcne: 12,
   // An array of creams
   creams: [],
   // How much cream in the face
   numCreams: 5,
  // The color of the background
   imageColor: {
-  r: 0,
-  g: 0,
-  b: 20
+  r: 206,
+  g: 255,
+  b: 10
 }
 };
 
@@ -66,7 +66,7 @@ function draw() {
   background(face.imageColor.r, face.imageColor.g, face.imageColor.b);
 
   // draw() executes over and over once setup() has executed
-  var skin = color('#CFD3D7');
+  var skin = color('#465956');
   noStroke();
   ellipseMode(CENTER);
   
@@ -75,9 +75,24 @@ function draw() {
   fill(skin);
   ellipse(width/2, height/2, 500, 600);
 
+  fill(skin);
+  ellipse(150, 410, 50, 100);
+  ellipse(650, 410, 50, 100);
+
+    // Loop through all the acne in the array and display them
+  for (let i = 0; i < face.acne.length; i++) {
+    let acne = face.acne[i];
+    // Check if this acne is alive
+    if (acne.alive) {
+      // Update the acne by shrinking it and displaying it
+      acne.shrink();
+      acne.display();
+    }
+  }
+
   // nose
   noStroke();
-  fill('#998FA5');
+  fill('#7d9692');
   beginShape();
   vertex(400, 425);
   vertex(400, 525);
@@ -99,28 +114,12 @@ function draw() {
   arc(300, 420, 80, 80, PI+.9, -.9);
   arc(500, 420, 80, 80, PI+.9, -.9);
   
-  
   // lips
   strokeWeight(20);
   stroke('#f28865');
   arc(400, 550, 150, 100, .9, PI-.9);
   noStroke();
   
-  fill(skin);
-  ellipse(150, 410, 50, 100);
-  ellipse(650, 410, 50, 100);
-
-  // Loop through all the acne in the array and display them
-  for (let i = 0; i < face.acne.length; i++) {
-    let acne = face.acne[i];
-    // Check if this acne is alive
-    if (acne.alive) {
-      // Update the acne by shrinking it and displaying it
-      acne.shrink();
-      acne.display();
-    }
-  }
-
   // Loop through all the creams in the array and display them
   for (let i = 0; i < face.creams.length; i++) {
     let cream = face.creams[i];

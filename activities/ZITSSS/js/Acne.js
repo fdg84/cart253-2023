@@ -12,9 +12,9 @@ class Acne {
     this.maxAcneThickness = 5; 
     this.acneColor = acneColor;
     this.centreColor = {
-      r: 255,
-      g: 0,
-      b: 0
+      r: 220,
+      g: 43,
+      b: 142
     };
     this.alive = true;
   }
