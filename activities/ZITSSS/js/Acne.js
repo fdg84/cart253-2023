@@ -7,9 +7,9 @@ class Acne {
     this.y = y;
     this.size = size;
     this.maxSize = size; 
-    this.zitThickness = 0;
+    this.zitThickness = 1;
     this.acneThickness = 0.5;
-    this.maxAcneThickness = 10; 
+    this.maxAcneThickness = 5; 
     this.acneColor = acneColor;
     this.centreColor = {
       r: 255,
@@ -19,48 +19,18 @@ class Acne {
     this.alive = true;
   }
 
-  // // shrink() MUST GROW!!!
-  // // Shrinks the Acne
-  // shrink() {
-  //   // Choose a random amount to shrink
-  //   let shrinkage = random(0, 0.05);
-  //   // Reduce the acne thickness (divide by 10 to make it less rapid)
-  //   this.acneThickness = this.acneThickness - shrinkage / 10;
-  //   // Reduce the centre of the Acne
-  //   this.size = this.size - shrinkage;
-
-  //   // If any of the key properties reach 0 or less, the Acne is dead
-  //   if (this.acneThickness <= 0 || this.size <= 0) {
-  //     this.alive = false;
-  //   }
-  // }
-
-  // // NEW! soothe() handles the Acne being soothed (it grows) REVERSE!!!
-  // soothe() {
-  //   // Choose a random amount to grow
-  //   let growth = random(0, 0.5);
-  //   // Increase the acne thickness (divide by 10 to make it less rapid)
-  //   this.acneThickness = this.acneThickness + growth / 10;
-  //   // Increase the centre of the Acne
-  //   this.size = this.size + growth;
-
-  //   // Constrain the elements
-  //   this.acneThickness = constrain(this.acneThickness, 0, this.maxAcneThickness);
-  //   this.size = constrain(this.size, 0, this.maxSize);
-  // }
-
     // shrink() MUST GROW!!!
   // Shrinks the Acne
   soothe() {
     // Choose a random amount to shrink
-    let growth = random(0, 0.5);
+    let growth = random(0, 0,5);
     // Reduce the acne thickness (divide by 10 to make it less rapid)
-    this.acneThickness = this.acneThickness - growth / 20;
+    this.acneThickness = this.acneThickness - growth / 10;
     // Reduce the centre of the Acne
     this.size = this.size - growth;
 
-    // If any of the key properties reach 0 or less, the Acne is dead
-    if (this.acneThickness <= 0 || this.size <= 0) {
+    // If any of the key properties reach 2 or less, the Acne is dead
+    if (this.acneThickness <= 2 || this.size <= 2) {
       this.alive = false;
     }
   }
@@ -68,7 +38,7 @@ class Acne {
   // NEW! soothe() handles the Acne being soothed (it grows) REVERSE!!!
   shrink() {
     // Choose a random amount to grow
-    let shrinkage = random(0, 0.1);
+    let shrinkage = random(0, 1);
     // Increase the acne thickness (divide by 10 to make it less rapid)
     this.acneThickness = this.acneThickness + shrinkage / 40;
     // Increase the centre of the Acne

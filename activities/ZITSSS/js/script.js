@@ -12,11 +12,11 @@ let face = {
   // An array to store the individual acne
   acne: [],
   // How many acne in the face
-  numAcne: 20,
+  numAcne: 10,
   // An array to our the creams
   creams: [],
   // How many creams in the face
-  numCreams: 5,
+  numCreams: 7,
  // The color of the grass (background)
   imageColor: {
   r: 0,
@@ -34,7 +34,7 @@ function setup() {
     // Create variables for our arguments for clarity
     let x = random(0, width);
     let y = random(0, height);
-    let size = random(50, 80);
+    let size = random(10, 50);
     let acneLength = random(50, 100);
     let zitColor = {
       r: random(100, 255),
