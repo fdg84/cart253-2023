@@ -8,7 +8,7 @@
 
 "use strict";
 
-let titleString = "Soothe The Acne";
+let titleString = "Soothe The Acne\nClick To Start";
 let endingString = "Goodbye Zits";
 
 let state = `title`; // We start in the title state
@@ -89,7 +89,10 @@ ellipse(650, 410, 50, 100);
   if (state === `title`) {
     // In the title state we display the title
     fill(255);
-    text(titleString, width / 2, height / 2);
+    text(titleString, 0, 250, width);
+    textSize(26);
+    strokeWeight(0.5);
+    textAlign(CENTER, TOP);
   }
   else if (state === `animation`) {
     // In the animation state we animate the Acne
@@ -124,35 +127,7 @@ ellipse(650, 410, 50, 100);
         cream.display();
       }
   }
-
-  }
-  
-
-
-  // // draw() executes over and over once setup() has executed
-  // var skin = color('#465956');
-  // noStroke();
-  // ellipseMode(CENTER);
-  
-  // // face
-  // noStroke();
-  // fill(skin);
-  // ellipse(width/2, height/2, 500, 600);
-
-  // fill(skin);
-  // ellipse(150, 410, 50, 100);
-  // ellipse(650, 410, 50, 100);
-
-  //   // Loop through all the acne in the array and display them
-  // for (let i = 0; i < face.acne.length; i++) {
-  //   let acne = face.acne[i];
-  //   // Check if this acne is alive
-  //   if (acne.alive) {
-  //     // Update the acne by shrinking it and displaying it
-  //     acne.shrink();
-  //     acne.display();
-  //   }
-  // }
+}
 
   // nose
   noStroke();
@@ -184,38 +159,20 @@ ellipse(650, 410, 50, 100);
   arc(400, 550, 150, 100, .9, PI-.9);
   noStroke();
   
-  // // Loop through all the creams in the array and display them
-  // for (let i = 0; i < face.creams.length; i++) {
-  //   let cream = face.creams[i];
-  //   // Check if this acne is alive
-  //   if (cream.alive) {
-  //     // Shrink and move the cream
-  //     cream.shrink();
-  //     cream.move();
-
-  //     // NEW! Go through the entire acne array and try to soothe the acne!
-  //     // Note that we use j in our for-loop here because we're already inside
-  //     // a for-loop using i!
-  //     for (let j = 0; j < face.acne.length; j++) {
-  //       let acne = face.acne[j];
-  //       cream.tryToSoothe(acne);
-  //       }
-  //       // Display the cream
-  //       cream.display();
-  //     }
+  //   // And we change to the ending state if the Acne is done
+  //   if (acne = 0) {
+  //     state = `ending`;
+  //   }
+  
+  //   else if (state === `ending`) {
+  //   // In the ending state we display the ending
+  //   fill(255);
+  //   text(titleString, width / 2, height / 2);
+  //   textSize(26);
+  //   strokeWeight(0.5);
+  //   textAlign(CENTER, TOP);
   // }
 
-//     // And we change to the ending state if the Acne is done
-//     if (circle.x > width) {
-//       state = `ending`;
-//     }
-//   }
-//   else if (state === `ending`) {
-//     // In the ending state we display the ending
-//     fill(255, 0, 0);
-//     text(endingString, width / 2, height / 2)
-//   }
-// }
 
 }
 
