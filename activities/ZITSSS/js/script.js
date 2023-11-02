@@ -71,33 +71,30 @@ function draw() {
   // Display the background
   background(face.imageColor.r, face.imageColor.g, face.imageColor.b);
 
-  // if (state === `title`) {
-  //   // In the title state we display the title
-  //   fill(255);
-  //   text(titleString, width / 2, height / 2);
-  // }
-  // else if (state === `animation`) {
-  //   // In the animation state we animate the Acne
-  //   let acne = face.acne[j];
-  // }
+// draw() executes over and over once setup() has executed
+var skin = color('#465956');
+noStroke();
+ellipseMode(CENTER);
 
+// face
+noStroke();
+fill(skin);
+ellipse(width/2, height/2, 500, 600);
 
-  // draw() executes over and over once setup() has executed
-  var skin = color('#465956');
-  noStroke();
-  ellipseMode(CENTER);
-  
-  // face
-  noStroke();
-  fill(skin);
-  ellipse(width/2, height/2, 500, 600);
+fill(skin);
+ellipse(150, 410, 50, 100);
+ellipse(650, 410, 50, 100);
 
-  fill(skin);
-  ellipse(150, 410, 50, 100);
-  ellipse(650, 410, 50, 100);
-
-    // Loop through all the acne in the array and display them
-  for (let i = 0; i < face.acne.length; i++) {
+  console.log(state);
+  if (state === `title`) {
+    // In the title state we display the title
+    fill(255);
+    text(titleString, width / 2, height / 2);
+  }
+  else if (state === `animation`) {
+    // In the animation state we animate the Acne
+   // Loop through all the acne in the array and display them
+   for (let i = 0; i < face.acne.length; i++) {
     let acne = face.acne[i];
     // Check if this acne is alive
     if (acne.alive) {
@@ -106,6 +103,56 @@ function draw() {
       acne.display();
     }
   }
+
+  // Loop through all the creams in the array and display them
+  for (let i = 0; i < face.creams.length; i++) {
+    let cream = face.creams[i];
+    // Check if this acne is alive
+    if (cream.alive) {
+      // Shrink and move the cream
+      cream.shrink();
+      cream.move();
+
+      // NEW! Go through the entire acne array and try to soothe the acne!
+      // Note that we use j in our for-loop here because we're already inside
+      // a for-loop using i!
+      for (let j = 0; j < face.acne.length; j++) {
+        let acne = face.acne[j];
+        cream.tryToSoothe(acne);
+        }
+        // Display the cream
+        cream.display();
+      }
+  }
+
+  }
+  
+
+
+  // // draw() executes over and over once setup() has executed
+  // var skin = color('#465956');
+  // noStroke();
+  // ellipseMode(CENTER);
+  
+  // // face
+  // noStroke();
+  // fill(skin);
+  // ellipse(width/2, height/2, 500, 600);
+
+  // fill(skin);
+  // ellipse(150, 410, 50, 100);
+  // ellipse(650, 410, 50, 100);
+
+  //   // Loop through all the acne in the array and display them
+  // for (let i = 0; i < face.acne.length; i++) {
+  //   let acne = face.acne[i];
+  //   // Check if this acne is alive
+  //   if (acne.alive) {
+  //     // Update the acne by shrinking it and displaying it
+  //     acne.shrink();
+  //     acne.display();
+  //   }
+  // }
 
   // nose
   noStroke();
@@ -137,26 +184,26 @@ function draw() {
   arc(400, 550, 150, 100, .9, PI-.9);
   noStroke();
   
-  // Loop through all the creams in the array and display them
-  for (let i = 0; i < face.creams.length; i++) {
-    let cream = face.creams[i];
-    // Check if this acne is alive
-    if (cream.alive) {
-      // Shrink and move the cream
-      cream.shrink();
-      cream.move();
+  // // Loop through all the creams in the array and display them
+  // for (let i = 0; i < face.creams.length; i++) {
+  //   let cream = face.creams[i];
+  //   // Check if this acne is alive
+  //   if (cream.alive) {
+  //     // Shrink and move the cream
+  //     cream.shrink();
+  //     cream.move();
 
-      // NEW! Go through the entire acne array and try to soothe the acne!
-      // Note that we use j in our for-loop here because we're already inside
-      // a for-loop using i!
-      for (let j = 0; j < face.acne.length; j++) {
-        let acne = face.acne[j];
-        cream.tryToSoothe(acne);
-        }
-        // Display the cream
-        cream.display();
-      }
-  }
+  //     // NEW! Go through the entire acne array and try to soothe the acne!
+  //     // Note that we use j in our for-loop here because we're already inside
+  //     // a for-loop using i!
+  //     for (let j = 0; j < face.acne.length; j++) {
+  //       let acne = face.acne[j];
+  //       cream.tryToSoothe(acne);
+  //       }
+  //       // Display the cream
+  //       cream.display();
+  //     }
+  // }
 
 //     // And we change to the ending state if the Acne is done
 //     if (circle.x > width) {
