@@ -1,8 +1,7 @@
 /**
- * TEMPLATE
+ * ZITS - HEAL THE ACNE!
  * Francis Ouellette
  * 
- * ++++!
  */
 
 "use strict";
@@ -19,7 +18,7 @@ let face = {
   // How many creams in the face
   numCreams: 5,
  // The color of the grass (background)
- imageColor: {
+  imageColor: {
   r: 0,
   g: 0,
   b: 20
@@ -36,14 +35,14 @@ function setup() {
     let x = random(0, width);
     let y = random(0, height);
     let size = random(50, 80);
-    let stemLength = random(50, 100);
-    let petalColor = {
+    let acneLength = random(50, 100);
+    let zitColor = {
       r: random(100, 255),
       g: random(100, 255),
       b: random(100, 255)
     }
     // Create a new acne using the arguments
-    let acne = new Acne(x, y, size, stemLength, petalColor);
+    let acne = new Acne(x, y, size, acneLength, zitColor);
     // Add the acne to the array of acne
     face.acne.push(acne);
   }
