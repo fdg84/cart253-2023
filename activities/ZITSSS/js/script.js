@@ -85,12 +85,11 @@ fill(skin);
 ellipse(150, 410, 50, 100);
 ellipse(650, 410, 50, 100);
 
-  console.log(state);
   if (state === `title`) {
     // In the title state we display the title
     fill(100,100,200);
     text(titleString, 0, 250, width);
-    textSize(26);
+    textSize(100);
     strokeWeight(0.5);
     textAlign(CENTER, TOP);
   }
