@@ -9,7 +9,9 @@
 "use strict";
 
 let titleString = "Soothe The Acne\nClick To Start";
-let endingString = "Goodbye Zits";
+let zitEndingString = "Goodbye Zits";
+let creamEndingString = "Try Again";
+let zitsDead, creamDead
 
 let state = `title`; // We start in the title state
 
@@ -18,7 +20,7 @@ let face = {
   // An array to store the individual acne
   acne: [],
   // How much acne in the face
-  numAcne: 12,
+  numAcne: 10,
   // An array of creams
   creams: [],
   // How much cream in the face
@@ -65,6 +67,7 @@ function setup() {
   }
 }
 
+
 // draw()
 // Displays our acne
 function draw() {
@@ -72,19 +75,20 @@ function draw() {
   background(face.imageColor.r, face.imageColor.g, face.imageColor.b);
 
 // draw() executes over and over once setup() has executed
-var skin = color('#465956');
-noStroke();
-ellipseMode(CENTER);
+  var skin = color('#465956');
+  noStroke();
+  ellipseMode(CENTER);
 
-// face
-noStroke();
-fill(skin);
-ellipse(width/2, height/2, 500, 600);
+  // face
+  noStroke();
+  fill(skin);
+  ellipse(width/2, height/2, 500, 600);
 
-fill(skin);
-ellipse(150, 410, 50, 100);
-ellipse(650, 410, 50, 100);
+  fill(skin);
+  ellipse(150, 410, 50, 100);
+  ellipse(650, 410, 50, 100);
 
+  
   if (state === `title`) {
     // In the title state we display the title
     fill(100,100,200);
@@ -92,42 +96,54 @@ ellipse(650, 410, 50, 100);
     textSize(100);
     strokeWeight(0.5);
     textAlign(CENTER, TOP);
-  }
 
-  else if (state === `animation`) {
-    // In the animation state we animate the Acne
-   // Loop through all the acne in the array and display them
-   for (let i = 0; i < face.acne.length; i++) {
-    let acne = face.acne[i];
-    // Check if this acne is alive
-    if (acne.alive) {
-      // Update the acne by shrinking it and displaying it
-      acne.shrink();
-      acne.display();
+  } else if (state === `animation`) {
+      // In the animation state we animate the Acne
+    // Loop through all the acne in the array and display them
+    zitsDead = true
+    for (let i = 0; i < face.acne.length; i++) {
+      let acne = face.acne[i];
+      // Check if this acne is alive
+      if (acne.alive) {
+        // Update the acne by shrinking it and displaying it
+        zitsDead = false
+        acne.shrink();
+        acne.display();
+      }
     }
-  }
-
   // Loop through all the creams in the array and display them
-  for (let i = 0; i < face.creams.length; i++) {
-    let cream = face.creams[i];
-    // Check if this acne is alive
-    if (cream.alive) {
-      // Shrink and move the cream
-      cream.shrink();
-      cream.move();
-
-      // NEW! Go through the entire acne array and try to soothe the acne!
-      // Note that we use j in our for-loop here because we're already inside
-      // a for-loop using i!
-      for (let j = 0; j < face.acne.length; j++) {
-        let acne = face.acne[j];
-        cream.tryToSoothe(acne);
+    creamDead = true
+    for (let i = 0; i < face.creams.length; i++) {
+      let cream = face.creams[i];
+      // Check if this acne is alive
+      if (cream.alive) {
+        // Shrink and move the cream
+        cream.shrink();
+        cream.move();
+        creamDead = false
+        // NEW! Go through the entire acne array and try to soothe the acne!
+        // Note that we use j in our for-loop here because we're already inside
+        // a for-loop using i!
+        for (let j = 0; j < face.acne.length; j++) {
+          let acne = face.acne[j];
+          cream.tryToSoothe(acne);
         }
         // Display the cream
         cream.display();
+          
       }
+    }
   }
-}
+
+  if (zitsDead && state !== 'title' && state !== 'creamEnding'){
+    console.log('z:', zitsDead, 'c:', creamDead)
+    state = 'zitEnding'
+  }
+
+  if (creamDead && state !== 'title' && state !== 'zitEnding'){
+    console.log('z:', zitsDead, 'c:', creamDead)
+    state = 'creamEnding'
+  }
 
   // nose
   noStroke();
@@ -159,24 +175,23 @@ ellipse(650, 410, 50, 100);
   arc(400, 550, 150, 100, .9, PI-.9);
   noStroke();
   
+  if (state === `zitEnding`) {
+    // display the zit ending
+    fill(150,200,250);
+    text(zitEndingString, width / 2, height / 2);
+    textSize(100);
+    strokeWeight(0.5);
+    textAlign(CENTER, TOP);
+  }
 
-  //   // DO SAME WITH CREAM === 0 or false
-  //   // And we change to the ending state if the Acne is done
-  //   if (acne.alive === false) {
-  //   if (acne === 0) {
-
-  //       state = `ending`;
-  //   }
-  
-  //   else if (state === `ending`) {
-  //   // In the ending state we display the ending
-  //   fill(255);
-  //   text(titleString, width / 2, height / 2);
-  //   textSize(26);
-  //   strokeWeight(0.5);
-  //   textAlign(CENTER, TOP);
-  // }
-
+  if (state === `creamEnding`) {
+    // display the cream ending
+    fill(255,0,0);
+    text(creamEndingString, width / 2, height / 2);
+    textSize(100);
+    strokeWeight(0.5);
+    textAlign(CENTER, TOP);
+  }
 }
 
 function mousePressed() {
