@@ -1,16 +1,12 @@
 /**
- * I LIKE TO MOVE IT!
+ * Audio Movement
  * FRANCIS OUELLETTE    
- * 
- * NEW EXERCISE
+ * Prototype Test
  */
 
 "use strict";
 
-/**
- * Description of preload
-*/
-let bellsSFX;
+let bellsSFX, reverb;
 
 function preload() {
   bellsSFX = loadSound(`assets/sounds/bellsfx.wav`);
@@ -21,38 +17,31 @@ let bgCanvas = 700;
 let size;
 let circle = 0;
 
-
-
-/**
- * Description of setup
-*/
 function setup() {
     createCanvas(bgCanvas, bgCanvas);
     userStartAudio();
 
+    reverb = new p5.Reverb();
+    bellsSFX.disconnect();
+    reverb.process(bellsSFX, 20, 2);
+    // delay = new p5.Delay();
+    // delay.process(bellsSFX, 0.12, .7, 2300);
 }
 
-
-/**
- * Description of draw()
-*/
 function draw() {
 
-background(140, 100, mouseY);
-circle = map(mouseX, 0, width, 255, 150);
+let dryWet = constrain(map(mouseX, 0.5, width, 0, 1), 0, 1);
+reverb.drywet(dryWet);
+
+background(0, 100, mouseY);
+circle = map(mouseX, 0, width, 255, 0);
 size = constrain(mouseX, 0, width);
-stroke(200, 50, 100, 100);
-fill(circle, 150, 0);
+stroke(0, 50, 100, 0);
+fill(circle, 250, 0);
 ellipse(width/2, height/2, size);
 
 let newRate = map(mouseX, 0, width, -3, 3);
 bellsSFX.rate(newRate);
-
-// fill(25);
-// triangle(250, mouseX, 400, mouseY, 150, 275);
-
-// fill(222, 222, 0)
-// quad(150, mouseX, 555, 250, 350, 138, mouseY, 150);
 
 rectMode(CENTER);
 fill(255);
@@ -61,10 +50,6 @@ rect(350, 350, 10, mouseX);
 rectMode(CENTER);
 fill(255);
 rect(350, 350, mouseY, 10);
-
-// let x1 = map(mouseX, 0, width, 0, 700);
-//   ellipse(x1, 55, 55, 55);
-
 }
 
 function mousePressed() {
