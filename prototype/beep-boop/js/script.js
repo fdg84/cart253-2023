@@ -1,5 +1,5 @@
 /**
- * TEMPLATE
+ * AUDIO
  * Francis Ouellette
  * 
  * Test!
@@ -14,7 +14,8 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(500, 500);
+  createCanvas(600, 600);
+  userStartAudio();
 }
 
 function draw() {
@@ -22,5 +23,6 @@ function draw() {
 }
 
 function mousePressed() {
+  bellsSFX.rate(-1);
   bellsSFX.play();
 }
