@@ -32,7 +32,7 @@ function setup() {
 }
 
 function draw() { 
-  background(255);
+  background(0,100,100);
 
   // try experimenting with this
   let gridSize = int(map(mouseX, 0,width, 15,50));
@@ -51,7 +51,7 @@ function draw() {
       
       // draw a circle at the current location
       // using the diameter we calculated
-      fill(0);
+      fill(20,200,100);
       noStroke();
       circle(x+gridSize/2,y+gridSize/2, dia);
     }
