@@ -32,7 +32,8 @@ function setup() {
 }
 
 function draw() { 
-  background(0,100,100);
+  background(55,100,255);
+  // (46,101,104) dark turquoise
 
   // try experimenting with this
   let gridSize = int(map(mouseX, 0,width, 15,50));
@@ -51,7 +52,7 @@ function draw() {
       
       // draw a circle at the current location
       // using the diameter we calculated
-      fill(20,200,100);
+      fill(170,250,0);
       noStroke();
       circle(x+gridSize/2,y+gridSize/2, dia);
     }
