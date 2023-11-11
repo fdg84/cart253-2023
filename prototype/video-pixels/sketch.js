@@ -29,11 +29,15 @@ function setup() {
   video = createCapture(VIDEO);
   video.size(width, height);
   video.hide();
+
+  // textSize(100);
+  // fill('white');
+  // text('ECHO SPACE', 50, 50);
 }
 
 function draw() { 
   background(55,100,255);
-  // (46,101,104) dark turquoise
+  // rgb(46,101,104) dark turquoise
 
   // try experimenting with this
   let gridSize = int(map(mouseX, 0,width, 15,50));
