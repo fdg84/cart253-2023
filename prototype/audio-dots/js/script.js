@@ -1,5 +1,5 @@
 /**
- * TEMPLATE
+ * Audio Dots
  * Francis Ouellette
  * 
  * Help File:
@@ -13,10 +13,10 @@ let ry = 100;
 let rw = 100;
 let rh = 100;
 
-let chain;
+let kick;
 
 function preload() {
-    chain = loadSound('assets/sounds/chainpad.wav');
+    kick = loadSound('assets/sounds/kick1.wav');
 }
 
 function setup() {
@@ -26,7 +26,7 @@ function setup() {
 function draw() {
     background (15, 122, 177);
 
-    if(chain.isPlaying()) {
+    if(kick.isPlaying()) {
         noStroke();
         fill(255, 0 , 0);
         rw += 30;
@@ -43,6 +43,6 @@ function draw() {
     function mousePressed() {
         if(mouseX > rx && mouseX < rx + rw &&
             mouseY > ry && mouseY < ry + rh) {
-                chain.play();
+                kick.play();
             }
     }

@@ -1,20 +1,18 @@
 /**
- * TEMPLATE
+ * Generative Dots
  * Francis Ouellette
- * 
- * Test!
  */
 
 "use strict";
 
 function preload() {
-
 }
 
 function setup() {
   createCanvas(displayWidth, displayHeight);
   noLoop();
-  strokeWeight(30);
+  // strokeWeight(30);
+  strokeWeight(4);
   stroke(10)
 }
 
