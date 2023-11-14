@@ -2,7 +2,8 @@
  * TEMPLATE
  * Francis Ouellette
  * 
- * Test!
+ * Help File:
+ * https://www.youtube.com/watch?v=W-y4zEppsWg
  */
 
 "use strict";
@@ -28,15 +29,15 @@ function draw() {
     if(chain.isPlaying()) {
         noStroke();
         fill(255, 0 , 0);
-        rw += 3;
-        rh += 3
+        rw += 30;
+        rh += 30
     } else {
         noStroke();
         fill(255);
         rw = 100;
         rh = 100;
     }
-        rect(rx, ry, rw, rh);
+        ellipse(rx, ry, rw, rh);
 }
 
     function mousePressed() {
