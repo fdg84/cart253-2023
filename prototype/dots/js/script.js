@@ -14,14 +14,15 @@ function preload() {
 function setup() {
   createCanvas(displayWidth, displayHeight);
   noLoop();
-  strokeWeight(6);
+  strokeWeight(30);
+  stroke(10)
 }
 
 function draw() {
-  background(110, 125, 70);
+  background(255);
 
-  const columns = 10;
-  const rows = 10;
+  const columns = 20;
+  const rows = 12;
   const cellWidth = width / columns;
   const cellHeight = height / rows;
 
@@ -36,7 +37,7 @@ function draw() {
 }
 
 function drawFlower(x, y, size) {
-  const flowerSize = random(size * .5, size * .95);
+  const flowerSize = random(size * .005, size * 1);
   const spacing = flowerSize / 2;
 
   fill(random(255), random(255), random(255));
