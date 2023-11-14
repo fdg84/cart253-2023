@@ -13,11 +13,12 @@ function preload() {
 }
 
 let bg = 0;
-let bgCanvas = 700;
+let bgCanvas = (700);
 let size;
 let circle = 0;
 
 function setup() {
+    // createCanvas(displayWidth, displayHeight);
     createCanvas(bgCanvas, bgCanvas);
     userStartAudio();
 
