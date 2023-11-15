@@ -5,10 +5,12 @@ class Ball {
       // Position and size information
       this.x = x;
       this.y = y;
-      this.radius = radius;
+      this.radius = 20;
+      this.clickRadius = radius;
       this.animate = false;
-      this.maxRadius = 50;
-      this.minRadius = 25;
+      this.maxRadius = 50 + Math.floor(Math.random() * 50);
+      this.minRadius = 20;
+      this.transformSpeed = 4
       this.row = row;
       this.col = col;
       this.isGrowing = false
@@ -21,11 +23,11 @@ class Ball {
     display() {
        push();
         if (this.isGrowing){
-            this.radius++;   
+            this.radius = this.radius + this.transformSpeed;   
         }
 
         if (this.isShrinking){
-            this.radius--;   
+            this.radius = this.radius - this.transformSpeed;   
         }
 
         if(this.radius >= this.maxRadius && this.isGrowing){
@@ -46,7 +48,8 @@ class Ball {
             fill(255,255,255)
             this.animate = false;
         }
-
+       strokeWeight(30);
+       stroke('#f28865'); 
        ellipse(this.x, this.y, this.radius);
        pop();
     }

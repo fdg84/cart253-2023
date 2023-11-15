@@ -59,7 +59,7 @@ function draw() {
     background (15, 122, 177);
 
     let hoverBall = balls.filter(ball => {
-        if (mouseX < (ball.x + ball.radius) && mouseX > (ball.x - ball.radius) && mouseY < (ball.y + ball.radius) && mouseY > (ball.y - ball.radius)){
+        if (mouseX < (ball.x + ball.clickRadius) && mouseX > (ball.x - ball.clickRadius) && mouseY < (ball.y + ball.clickRadius) && mouseY > (ball.y - ball.clickRadius)){
             return ball;
         }
     })[0]
@@ -76,7 +76,7 @@ function draw() {
 
 function mousePressed(e) {
     clickedBall = balls.filter(ball => {
-        if (mouseX < (ball.x + ball.radius) && mouseX > (ball.x - ball.radius) && mouseY < (ball.y + ball.radius) && mouseY > (ball.y - ball.radius)){
+        if (mouseX < (ball.x + ball.clickRadius) && mouseX > (ball.x - ball.clickRadius) && mouseY < (ball.y + ball.clickRadius) && mouseY > (ball.y - ball.clickRadius)){
             return ball;
         }
     })[0]
