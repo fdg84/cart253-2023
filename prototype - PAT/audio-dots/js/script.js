@@ -2,14 +2,15 @@
  * Audio Dots
  * Francis Ouellette
  * 
- * Help File:
+ * Web Version:
  * https://www.youtube.com/watch?v=W-y4zEppsWg
  */
 
 "use strict";
 
-let rx = 100;
-let ry = 100;
+let rx = 80; // CIRCLE POSITION
+let ry = 150;
+
 let rw = 100;
 let rh = 100;
 
@@ -28,14 +29,16 @@ function draw() {
 
     if(kick.isPlaying()) {
         noStroke();
-        fill(255, 0 , 0);
-        rw += 30;
-        rh += 30
+        // fill(255, 0 , 0, 50); // ALPHA LAYER (OPACITY)
+        fill(255, 0 , 0); 
+        rw += 50; // GROWTH SPEED
+        rh += 50
     } else {
         noStroke();
-        fill(255);
-        rw = 100;
-        rh = 100;
+        // fill(255, 255, 255, 50); // ALPHA
+        fill(255, 255, 255);
+        rw = 70; // CIRCLE SIZE
+        rh = 70;
     }
         ellipse(rx, ry, rw, rh);
 }

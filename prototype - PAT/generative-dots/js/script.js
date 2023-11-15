@@ -11,9 +11,8 @@ function preload() {
 function setup() {
   createCanvas(displayWidth, displayHeight);
   noLoop();
-  // strokeWeight(30);
-  strokeWeight(4);
-  stroke(10)
+  strokeWeight(1); // STROKE THICKNESS (ADJUST)
+  stroke(55,100,255)
 }
 
 function draw() {
@@ -29,15 +28,15 @@ function draw() {
       const x = c * cellWidth + cellWidth / 2;
       const y = r * cellHeight + cellHeight / 2;
 
-      drawFlower(x, y, min(cellWidth, cellHeight));
+      drawDots(x, y, min(cellWidth, cellHeight));
     }
   }
 }
 
-function drawFlower(x, y, size) {
-  const flowerSize = random(size * .005, size * 1);
-  const spacing = flowerSize / 2;
+function drawDots(x, y, size) {
+  const dotSize = random(size * .005, size * 1); // DOT SIZES
+  const spacing = dotSize / 2;
 
-  fill(random(255), random(255), random(255));
-  circle(x, y, flowerSize);
+  fill(random(0), random(250), random(250)); // DOT COLORS
+  circle(x, y, dotSize);
 }
