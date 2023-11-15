@@ -11,7 +11,7 @@ function preload() {
 function setup() {
   createCanvas(displayWidth, displayHeight);
   noLoop();
-  strokeWeight(1); // STROKE THICKNESS (ADJUST)
+  strokeWeight(30); // STROKE THICKNESS (ADJUST)
   stroke(55,100,255)
 }
 
