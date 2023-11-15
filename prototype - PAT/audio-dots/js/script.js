@@ -16,13 +16,24 @@
 // let rw = 100;
 // let rh = 100;
 
-let kick;
 const balls = []
 const radius = 25;
 let clickedBall
+const sounds = []
 
 function preload() {
-    kick = loadSound('assets/sounds/kick1.wav');
+    let kick = loadSound('assets/sounds/kick1.wav');
+    sounds.push(kick)
+    let kick2 = loadSound('assets/sounds/kick2.wav');
+    sounds.push(kick2)
+    let kick3 = loadSound('assets/sounds/kick3.wav');
+    sounds.push(kick3)
+    let click = loadSound('assets/sounds/click1.wav');
+    sounds.push(click)
+    let click2 = loadSound('assets/sounds/click2.wav');
+    sounds.push(click2)
+    let click3 = loadSound('assets/sounds/click3.wav');
+    sounds.push(click3)
 }
 
 function setup() {
@@ -36,8 +47,8 @@ function setup() {
     for (let r = 0; r < rows; r++) {
       const x = c * cellWidth + cellWidth / 2;
       const y = r * cellHeight + cellHeight / 2;
-
-      const ball = new Ball(x, y, radius);
+      const soundIndex = Math.floor(Math.random() * sounds.length)  
+      const ball = new Ball(x, y, radius, r, c, sounds[soundIndex]);
       balls.push(ball)
     }
   }
@@ -47,63 +58,32 @@ function setup() {
 function draw() {
     background (15, 122, 177);
 
-    if(kick.isPlaying()) {
-        console.log("CLICKED BALL", clickedBall)
-        //noStroke();
-        // fill(255, 0 , 0, 50); // ALPHA LAYER (OPACITY)
-        if (clickedBall) {
-            clickedBall.animate = true
+    let hoverBall = balls.filter(ball => {
+        if (mouseX < (ball.x + ball.radius) && mouseX > (ball.x - ball.radius) && mouseY < (ball.y + ball.radius) && mouseY > (ball.y - ball.radius)){
+            return ball;
         }
-        //fill(255, 0 , 0); 
-        //rw += 50; // GROWTH SPEED
-        //rh += 50
-    } else {
-        
-        if (clickedBall) {
-            clickedBall.animate = false
-        }
-        
-        
-        // noStroke();
-        // // fill(255, 255, 255, 50); // ALPHA
-        // fill(255, 255, 255);
-        // rw = 70; // CIRCLE SIZE
-        // rh = 70;
+    })[0]
+
+    if(hoverBall){
+        hoverBall.isGrowing = true;
+        hoverBall.isShrinking = false;
     }
 
-        let hoverBall = balls.filter(ball => {
-            if (mouseX < (ball.x + ball.radius) && mouseX > (ball.x - ball.radius) && mouseY < (ball.y + ball.radius) && mouseY > (ball.y - ball.radius)){
-                return ball;
-            }
-        })[0]
-
-        if(hoverBall){
-            hoverBall.hoverAnimate = true
-            hoverBall.isGrowing = true
-        }
-
-       for (let i = 0; i < balls.length; i++){
-         balls[i].display()  
-       } 
-       //ellipse(rx, ry, rw, rh);
+    for (let i = 0; i < balls.length; i++){
+        balls[i].display()  
+    } 
 }
 
-    function mousePressed(e) {
-        console.log('mouse', e)
-        clickedBall = balls.filter(ball => {
-            if (mouseX < (ball.x + ball.radius) && mouseX > (ball.x - ball.radius) && mouseY < (ball.y + ball.radius) && mouseY > (ball.y - ball.radius)){
-                return ball;
-            }
-        })[0]
-
-        console.log("I CLICKED ON A BALL ", clickedBall)
-        if (clickedBall){
-            kick.play()
-            //ball.sound.play()
+function mousePressed(e) {
+    clickedBall = balls.filter(ball => {
+        if (mouseX < (ball.x + ball.radius) && mouseX > (ball.x - ball.radius) && mouseY < (ball.y + ball.radius) && mouseY > (ball.y - ball.radius)){
+            return ball;
         }
-        // if(mouseX > rx && mouseX < rx + rw &&
+    })[0]
 
-        //     mouseY > ry && mouseY < ry + rh) {
-        //         kick.play();
-        //     }
+    console.log("I CLICKED ON A BALL ", clickedBall)
+    if (clickedBall){
+        clickedBall.animate = true
+        clickedBall.sound.play()
     }
+}
