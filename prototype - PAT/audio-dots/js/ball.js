@@ -6,7 +6,12 @@ class Ball {
       this.x = x;
       this.y = y;
       this.radius = 25;
+      this.animate = false;
+      this.maxRadius = 50;
+      this.minRadius = 25;
       
+      this.isGrowing = false
+      this.isShrinking = false
       //const dotSize = random(size * .005, size * 1); // DOT SIZES
     
     
@@ -64,6 +69,30 @@ class Ball {
       //strokeWeight(this.acneThickness);
       //fill(this.centreColor.r, this.centreColor.g, this.centreColor.b);
       //stroke(this.acneColor.r, this.acneColor.g, this.acneColor.b);
+      if(this.animate){
+        fill(255,0,0)
+      }else{
+        fill(255,255,255)
+      }
+
+      if (this.isGrowing){
+        this.radius++;   
+      }
+
+      if (this.isShrinking){
+        this.radius--;   
+      }
+
+      if(this.radius > this.maxRadius){
+        this.isGrowing = false
+        this.isShrinking = true
+      }
+
+      if(this.radius < this.minRadius){
+        this.isGrowing = false
+        this.isShrinking = false
+      }
+
       ellipse(this.x, this.y, this.radius);
       pop();
     }

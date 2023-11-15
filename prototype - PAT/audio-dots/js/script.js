@@ -10,15 +10,16 @@
 
 
 
-let rx = 80; // CIRCLE POSITION
-let ry = 150;
+// let rx = 80; // CIRCLE POSITION
+// let ry = 150;
 
-let rw = 100;
-let rh = 100;
+// let rw = 100;
+// let rh = 100;
 
 let kick;
 const balls = []
 const radius = 25;
+let clickedBall
 
 function preload() {
     kick = loadSound('assets/sounds/kick1.wav');
@@ -47,18 +48,40 @@ function draw() {
     background (15, 122, 177);
 
     if(kick.isPlaying()) {
-        noStroke();
+        console.log("CLICKED BALL", clickedBall)
+        //noStroke();
         // fill(255, 0 , 0, 50); // ALPHA LAYER (OPACITY)
-        fill(255, 0 , 0); 
-        rw += 50; // GROWTH SPEED
-        rh += 50
+        if (clickedBall) {
+            clickedBall.animate = true
+        }
+        //fill(255, 0 , 0); 
+        //rw += 50; // GROWTH SPEED
+        //rh += 50
     } else {
-        noStroke();
-        // fill(255, 255, 255, 50); // ALPHA
-        fill(255, 255, 255);
-        rw = 70; // CIRCLE SIZE
-        rh = 70;
+        
+        if (clickedBall) {
+            clickedBall.animate = false
+        }
+        
+        
+        // noStroke();
+        // // fill(255, 255, 255, 50); // ALPHA
+        // fill(255, 255, 255);
+        // rw = 70; // CIRCLE SIZE
+        // rh = 70;
     }
+
+        let hoverBall = balls.filter(ball => {
+            if (mouseX < (ball.x + ball.radius) && mouseX > (ball.x - ball.radius) && mouseY < (ball.y + ball.radius) && mouseY > (ball.y - ball.radius)){
+                return ball;
+            }
+        })[0]
+
+        if(hoverBall){
+            hoverBall.hoverAnimate = true
+            hoverBall.isGrowing = true
+        }
+
        for (let i = 0; i < balls.length; i++){
          balls[i].display()  
        } 
@@ -67,13 +90,14 @@ function draw() {
 
     function mousePressed(e) {
         console.log('mouse', e)
-        const clickedBall = balls.filter(ball => {
+        clickedBall = balls.filter(ball => {
             if (mouseX < (ball.x + ball.radius) && mouseX > (ball.x - ball.radius) && mouseY < (ball.y + ball.radius) && mouseY > (ball.y - ball.radius)){
                 return ball;
             }
-        })
+        })[0]
+
         console.log("I CLICKED ON A BALL ", clickedBall)
-        if (clickedBall.length > 0){
+        if (clickedBall){
             kick.play()
             //ball.sound.play()
         }
