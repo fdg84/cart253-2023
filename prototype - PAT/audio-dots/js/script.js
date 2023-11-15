@@ -20,6 +20,7 @@ const balls = []
 const radius = 25;
 let clickedBall
 const sounds = []
+let reverb;
 
 function preload() {
     let kick = loadSound('assets/sounds/kick1.wav');
@@ -38,25 +39,42 @@ function preload() {
 
 function setup() {
     createCanvas (displayWidth, displayHeight);
+    userStartAudio();
+
     const columns = 20;
     const rows = 12;
     const cellWidth = width / columns;
     const cellHeight = height / rows;
-
-  for (let c = 0; c < columns; c++) {
-    for (let r = 0; r < rows; r++) {
-      const x = c * cellWidth + cellWidth / 2;
-      const y = r * cellHeight + cellHeight / 2;
-      const soundIndex = Math.floor(Math.random() * sounds.length)  
-      const ball = new Ball(x, y, radius, r, c, sounds[soundIndex]);
-      balls.push(ball)
+    
+    reverb = new p5.Reverb();
+    
+    for (let i = 0; i < sounds.length; i++){
+        sounds[i].disconnect();
+        reverb.process(sounds[i], 20, 2);
     }
-  }
+    
+    for (let c = 0; c < columns; c++) {
+        for (let r = 0; r < rows; r++) {
+        const x = c * cellWidth + cellWidth / 2;
+        const y = r * cellHeight + cellHeight / 2;
+        const soundIndex = Math.floor(Math.random() * sounds.length)  
+        const ball = new Ball(x, y, radius, r, c, sounds[soundIndex]);
+        balls.push(ball)
+        }
+    }
 
 }
 
 function draw() {
     background (15, 122, 177);
+
+    let dryWet = constrain(map(500, 0.3, Math.floor(Math.random() * 500), 0, 0.5), 0, 0.3);
+    console.log(dryWet)
+    reverb.drywet(dryWet);
+
+    // let dryWet = Math.random()/3
+    // console.log(dryWet)
+    // reverb.drywet(dryWet);
 
     let hoverBall = balls.filter(ball => {
         if (mouseX < (ball.x + ball.clickRadius) && mouseX > (ball.x - ball.clickRadius) && mouseY < (ball.y + ball.clickRadius) && mouseY > (ball.y - ball.clickRadius)){
