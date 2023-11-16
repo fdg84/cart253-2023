@@ -66,7 +66,7 @@ function setup() {
 }
 
 function draw() {
-    background (15, 122, 177);
+    background (52, 66, 244);
 
     let dryWet = constrain(map(500, 0.3, Math.floor(Math.random() * 500), 0, 0.5), 0, 0.3);
     console.log(dryWet)
