@@ -17,7 +17,7 @@
 // let rh = 100;
 
 const balls = []
-const radius = 25;
+const radius = 50;
 let clickedBall
 const sounds = []
 let reverb;
@@ -40,6 +40,7 @@ function preload() {
 function setup() {
     createCanvas (displayWidth, displayHeight);
     userStartAudio();
+    textFont(`Tilt Warp`)
 
     const columns = 20;
     const rows = 12;
@@ -67,6 +68,12 @@ function setup() {
 
 function draw() {
     background (52, 66, 244);
+
+    // textSize(450);
+    // fill(52, 66, 244);
+    // text('AUDIO', 100, 600);
+    // stroke(255);
+    // strokeWeight(55);
 
     let dryWet = constrain(map(500, 0.3, Math.floor(Math.random() * 500), 0, 0.5), 0, 0.3);
     console.log(dryWet)
@@ -99,7 +106,7 @@ function mousePressed(e) {
         }
     })[0]
 
-    console.log("I CLICKED ON A BALL ", clickedBall)
+    console.log("I CLICKED ON A BALL", clickedBall)
     if (clickedBall){
         clickedBall.animate = true
         clickedBall.sound.play()

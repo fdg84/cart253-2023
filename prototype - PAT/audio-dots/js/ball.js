@@ -8,7 +8,7 @@ class Ball {
       this.radius = 20;
       this.clickRadius = radius;
       this.animate = false;
-      this.maxRadius = 50 + Math.floor(Math.random() * 50);
+      this.maxRadius = 50 + Math.floor(Math.random() * 70);
       this.minRadius = 20;
       this.transformSpeed = 4
       this.row = row;
