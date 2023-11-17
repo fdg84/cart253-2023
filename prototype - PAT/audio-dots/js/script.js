@@ -14,6 +14,8 @@ let clickedBall
 const sounds = []
 let reverb;
 
+// ADD VOICE SNIPPETS TO SOUND BANK
+
 function preload() {
     let kick = loadSound('assets/sounds/kick1.wav');
     sounds.push(kick)
@@ -26,7 +28,7 @@ function preload() {
     let click2 = loadSound('assets/sounds/click2.wav');
     sounds.push(click2)
     let click3 = loadSound('assets/sounds/click3.wav');
-    sounds.push(click3)
+    sounds.push(click3) 
 }
 
 function setup() {
