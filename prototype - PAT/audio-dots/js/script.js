@@ -61,11 +61,11 @@ function setup() {
 function draw() {
     background (52, 66, 244);
 
-    textSize(450);
-    fill(52, 66, 244);
-    text('AUDIO', 100, 600);
-    stroke(255);
-    strokeWeight(55);
+    // textSize(450);
+    // fill(52, 66, 244);
+    // text('20kHz', 140, 600);
+    // stroke(255);
+    // strokeWeight(55);
 
     let dryWet = constrain(map(500, 0.3, Math.floor(Math.random() * 500), 0, 0.5), 0, 0.3);
     console.log(dryWet)

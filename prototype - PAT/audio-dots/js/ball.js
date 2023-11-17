@@ -13,8 +13,8 @@ class Ball {
       this.transformSpeed = 4
       this.row = row;
       this.col = col;
-      this.isGrowing = false
-      this.isShrinking = false
+      this.isGrowing = false;
+      this.isShrinking = false;
       console.log('my sound', sound)
       this.sound = sound;
     }
@@ -43,13 +43,13 @@ class Ball {
         }
 
         if(this.animate && this.sound.isPlaying()) {
-            fill(255,0,0);
+            fill(255, 0, 0);
         } else {
-            fill(255,255,255)
+            fill(255, 255, 255)
             this.animate = false;
         }
        strokeWeight(30);
-       stroke('#48949C'); 
+       stroke(72, 148, 156); 
        ellipse(this.x, this.y, this.radius);
        pop();
     }
