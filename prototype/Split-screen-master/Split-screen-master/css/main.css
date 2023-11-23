@@ -1,0 +1,37 @@
+body {
+	margin: 0;
+}
+
+html, body, .wrapper {
+  height: 100%;
+  width: 100%;
+}
+
+.mainCintainer {
+	display: table;
+	height: 110%;
+    width: 100%;
+}
+
+.wrapper {
+	display: table-row;
+}
+
+.leftContainer {
+	background-color: red;
+}
+
+.rightContainer{
+	background-color: blue;
+}
+
+.leftContainer,.rightContainer {
+	width: 50%;
+	display:table-cell;
+}
+
+input[type=button] {
+	width: 100px;
+	height: 50px;
+	margin: 5px;
+}

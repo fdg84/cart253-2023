@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+		<script type="text/javascript" src="js/main.js"></script>
+		<link type="text/css" rel="stylesheet" href="css/main.css"/>
+		<title>Split Screen</title>
+	</head>
+	<body>
+		<div class="mainCintainer">
+			<div class="wrapper">
+				<div class="leftContainer" style="min-height: 100%">
+				  <p></p>
+				  <input type="button" value="Load text" onclick="fillWithTextLeft()"></input>
+				  <input type="button" value="Remove text" onclick="emptyText('left')"></input>
+				</div>
+				<div class="rightContainer" style="min-height: 100%">
+				  <p></p>
+				  <input type="button" value="Load text" onclick="fillWithTextRight()"></input>
+				  <input type="button" value="Remove text" onclick="emptyText('right')"></input>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

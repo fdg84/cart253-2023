@@ -63,12 +63,6 @@ function setup() {
 function draw() {
     background (52, 66, 244);
 
-    // textSize(450);
-    // fill(52, 66, 244);
-    // text('20kHz', 140, 600);
-    // stroke(255);
-    // strokeWeight(55);
-
     let dryWet = constrain(map(500, 0.3, Math.floor(Math.random() * 500), 0, 0.5), 0, 0.3);
     console.log(dryWet)
     reverb.drywet(dryWet);
@@ -87,6 +81,20 @@ function draw() {
     for (let i = 0; i < balls.length; i++){
         balls[i].display()  
     } 
+
+    rectMode(CORNER);
+    fill(231, 46, 157);
+    noStroke();
+    rect(0, 0, 475, displayHeight);
+
+    textSize(50);
+    fill(255);
+    text('Audio Dots', 85, 200);
+    
+    textSize(20);
+    fill(255);
+    text('Click & Play', 160, 250);
+
 }
 
 function mousePressed(e) {
