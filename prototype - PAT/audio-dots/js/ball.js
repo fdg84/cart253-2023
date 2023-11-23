@@ -43,7 +43,7 @@ class Ball {
         }
 
         if(this.animate && this.sound.isPlaying()) {
-            fill(255, 0, 0);
+            fill(231, 46, 157);
         } else {
             fill(255, 255, 255)
             this.animate = false;

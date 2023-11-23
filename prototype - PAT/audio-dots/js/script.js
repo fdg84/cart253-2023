@@ -83,17 +83,60 @@ function draw() {
     } 
 
     rectMode(CORNER);
-    fill(231, 46, 157);
+    fill(171,250,0);
     noStroke();
-    rect(0, 0, 475, displayHeight);
+    rect(0, 0, 465, displayHeight);
 
-    textSize(50);
+    rectMode(CORNER);
     fill(255);
-    text('Audio Dots', 85, 200);
+    strokeWeight(20);
+    stroke(72, 148, 156);
+
+    // left ovals
+    rect(10, 75, 40, 100, 20);
+    rect(10, 175, 40, 50, 20);
+    rect(10, 225, 40, 150, 20);
+    rect(10, 375, 40, 100, 20);
+    rect(10, 475, 40, 50, 20);
+    rect(10, 525, 40, 50, 20);
+    rect(10, 575, 40, 100, 20);
+    rect(10, 675, 40, 152, 20);
+
+    // left ovals
+    rect(425, 75, 40, 100, 20);
+    rect(425, 175, 40, 50, 20);
+    rect(425, 225, 40, 150, 20);
+    rect(425, 375, 40, 100, 20);
+    rect(425, 475, 40, 50, 20);
+    rect(425, 525, 40, 50, 20);
+    rect(425, 575, 40, 100, 20);
+    rect(425, 675, 40, 152, 20);
+
+    // top ovals
+    rect(65, 80, 50, 40, 20);
+    rect(115, 80, 50, 40, 20);
+    rect(165, 80, 150, 40, 20);
+    rect(315, 80, 100, 40, 20);
+
+
+    // bottom ovals
+    rect(65, 780, 150, 40, 20);
+    rect(215, 780, 50, 40, 20);
+    rect(265, 780, 100, 40, 20);
+    rect(365, 780, 50, 40, 20);
+
+       
+    textSize(50);
+    noStroke();
+    fill(255);
+    text('Audio Dots', 105, 200);
     
     textSize(20);
+    noStroke();
     fill(255);
-    text('Click & Play', 160, 250);
+    text('Click & Play', 175, 230);
+
+    
 
 }
 
