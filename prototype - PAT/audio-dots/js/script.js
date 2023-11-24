@@ -34,7 +34,6 @@ function preload() {
 function setup() {
     createCanvas (displayWidth, displayHeight);
     userStartAudio();
-    textFont(`Tilt Warp`)
 
     const columns = 20;
     const rows = 12;
@@ -62,7 +61,6 @@ function setup() {
 
 function draw() {
     background (171, 250, 0);
-    // background (52, 66, 244);
 
     let dryWet = constrain(map(500, 0.3, Math.floor(Math.random() * 500), 0, 0.5), 0, 0.3);
     console.log(dryWet)
@@ -128,19 +126,28 @@ function draw() {
     rect(265, 780, 100, 40, 20);
     rect(365, 780, 50, 40, 20);
 
-       
-    textSize(50);
+    textFont(`Tilt Warp`)
+    textSize(138);
     noStroke();
     fill(255);
-    text('Audio Dots', 105, 200);
+    text('DOTS', 65, 472);
+
+    textFont(`Space Grotesk`)
+    textSize(20);
+    noStroke();
+    fill(255);
+    text('Audio', 73, 367);
     
     textSize(20);
     noStroke();
     fill(255);
-    text('Click & Play', 175, 230);
+    text('Click & Play', 292, 497);
 
+    textSize(12);
+    noStroke();
+    fill(255);
+    text('Welcome to a fun & interactive sound experience!', 90, 165);
     
-
 }
 
 function mousePressed(e) {
