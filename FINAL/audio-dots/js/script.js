@@ -2,8 +2,10 @@
  * Audio Dots
  * Francis Ouellette
  * 
- * Web Version:
+ * Online Files (Codes)
  * https://www.youtube.com/watch?v=W-y4zEppsWg
+ * https://p5js.org/examples/interaction-wavemaker.html
+ * 
  */
 
 "use strict";
@@ -13,8 +15,7 @@ const radius = 50;
 let clickedBall
 const sounds = []
 let reverb;
-
-// ADD VOICE SNIPPETS TO SOUND BANK
+let t = 0; // time variable
 
 function preload() {
     let kick = loadSound('assets/sounds/kick1.wav');
@@ -59,6 +60,10 @@ function setup() {
     createCanvas (displayWidth, displayHeight);
     userStartAudio();
 
+    // moving circles
+    noStroke();
+    fill(40, 200, 40);
+
     const columns = 20;
     const rows = 12;
     const cellWidth = width / columns;
@@ -84,7 +89,47 @@ function setup() {
 }
 
 function draw() {
-    background (171, 250, 0);
+    background (163, 195, 141);
+
+    fill(38, 65, 70);
+
+     // X and Y grid of Ellipses (Particles)
+     for (let x = 0; x <= width; x = x + 70) {
+        for (let y = 0; y <= height; y = y + 70) {
+          // starting point of each circle depends on mouse position
+          const xAngle = map(mouseX, 0, width, -4 * PI, 4 * PI, true);
+          const yAngle = map(mouseY, 0, height, -4 * PI, 4 * PI, true);
+          // and also varies based on the particle's location
+          const angle = xAngle * (x / width) + yAngle * (y / height);
+    
+          // each particle moves in a circle
+          const myX = x + 20 * cos(2 * PI * t + angle);
+          const myY = y + 20 * sin(2 * PI * t + angle);
+    
+          ellipse(myX, myY, 40); // draw particle
+        }
+      }
+
+      fill(0);
+
+     // X and Y grid of Ellipses (Particles)
+     for (let x = 0; x <= width; x = x + 70) {
+        for (let y = 0; y <= height; y = y + 70) {
+          // starting point of each circle depends on mouse position
+          const xAngle = map(mouseX, 0, width, -4 * PI, 4 * PI, true);
+          const yAngle = map(mouseY, 0, height, -4 * PI, 4 * PI, true);
+          // and also varies based on the particle's location
+          const angle = xAngle * (x / width) + yAngle * (y / height);
+    
+          // each particle moves in a circle
+          const myX = x + 20 * cos(2 * PI * t + angle);
+          const myY = y + 20 * sin(2 * PI * t + angle);
+    
+          ellipse(myX, myY, 20); // draw particle
+        }
+      }
+
+    t = t + 0.01; // update time
 
     let dryWet = constrain(map(500, 0.3, Math.floor(Math.random() * 500), 0, 0.5), 0, 0.3);
     console.log(dryWet)
@@ -106,7 +151,7 @@ function draw() {
     } 
 
     rectMode(CORNER);
-    fill(231, 46, 157);
+    fill(59, 95, 114);
     
     noStroke();
     rect(15, 100, 420, 700);
@@ -114,7 +159,7 @@ function draw() {
     rectMode(CORNER);
     fill(255);
     strokeWeight(20);
-    stroke(59, 95, 114);
+    stroke(0);
 
     // left ovals
     rect(10, 82, 40, 95, 20);
@@ -160,12 +205,12 @@ function draw() {
     textFont(`Space Grotesk`)
     textSize(30);
     noStroke();
-    fill(255, 166, 130);
+    fill(171, 250, 0);
     text('Audio', 73, 367);
     
     textSize(30);
     noStroke();
-    fill(255, 166, 130);
+    fill(171, 250, 0);
     text('Click & Play', 236, 505);
 
     textSize(12);

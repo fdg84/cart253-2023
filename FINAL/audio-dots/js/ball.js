@@ -43,13 +43,13 @@ class Ball {
         }
 
         if(this.animate && this.sound.isPlaying()) {
-            fill(231, 46, 157);
+            fill(171, 250, 0);
         } else {
-            fill(255, 255, 255)
+            fill(59, 95, 114)
             this.animate = false;
         }
-       strokeWeight(30);
-       stroke(59, 95, 114); 
+       strokeWeight(10);
+       stroke(255); 
        ellipse(this.x, this.y, this.radius);
        pop();
     }
