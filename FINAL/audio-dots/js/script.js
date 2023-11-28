@@ -106,7 +106,7 @@ function draw() {
     } 
 
     rectMode(CORNER);
-    fill(234, 121, 76);
+    fill(231, 46, 157);
     
     noStroke();
     rect(15, 100, 420, 700);
@@ -114,7 +114,7 @@ function draw() {
     rectMode(CORNER);
     fill(255);
     strokeWeight(20);
-    stroke(72, 148, 156);
+    stroke(59, 95, 114);
 
     // left ovals
     rect(10, 82, 40, 95, 20);
@@ -150,6 +150,7 @@ function draw() {
     rect(265, 780, 100, 40, 20);
     rect(365, 780, 50, 40, 20);
 
+    // TITLE
     textFont(`Tilt Warp`)
     textSize(138);
     noStroke();
@@ -157,15 +158,15 @@ function draw() {
     text('DOTS', 65, 472);
 
     textFont(`Space Grotesk`)
-    textSize(20);
+    textSize(30);
     noStroke();
-    fill(255);
+    fill(255, 166, 130);
     text('Audio', 73, 367);
     
-    textSize(20);
+    textSize(30);
     noStroke();
-    fill(255);
-    text('Click & Play', 292, 497);
+    fill(255, 166, 130);
+    text('Click & Play', 236, 505);
 
     textSize(12);
     noStroke();

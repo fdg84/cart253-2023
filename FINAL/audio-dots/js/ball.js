@@ -49,7 +49,7 @@ class Ball {
             this.animate = false;
         }
        strokeWeight(30);
-       stroke(72, 148, 156); 
+       stroke(59, 95, 114); 
        ellipse(this.x, this.y, this.radius);
        pop();
     }
