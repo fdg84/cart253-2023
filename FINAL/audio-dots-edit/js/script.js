@@ -137,10 +137,10 @@ function draw() {
         }
       }
 
-    t = t + 0.01; // update time
+    t = t + 0.0000001; // update time
 
     let dryWet = constrain(map(500, 0.3, Math.floor(Math.random() * 500), 0, 0.5), 0, 0.3);
-    console.log(dryWet)
+    
     reverb.drywet(dryWet);
 
     let hoverBall = balls.filter(ball => {
@@ -162,12 +162,12 @@ function draw() {
     fill(0);
     noStroke();
     rect(75, 160, 420, 330);
-
+    
     rectMode(CORNER);
     fill(255);
     strokeWeight(20);
     stroke(0);
-
+    
     // left ovals
     rect(75, 142, 40, 95, 20);
     rect(75, 238, 40, 50, 20);
@@ -225,7 +225,6 @@ function mousePressed(e) {
         }
     })[0]
 
-    console.log("I CLICKED ON A BALL", clickedBall)
     if (clickedBall){
         clickedBall.animate = true
         clickedBall.sound.play()
