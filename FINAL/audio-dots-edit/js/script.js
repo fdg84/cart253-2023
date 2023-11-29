@@ -151,7 +151,7 @@ function draw() {
     } 
 
     rectMode(CORNER);
-    fill(59, 95, 114);
+    fill(0);
     noStroke();
     rect(75, 160, 420, 330);
 
@@ -205,7 +205,7 @@ function draw() {
 
     textSize(12);
     noStroke();
-    fill(255);
+    fill(163, 195, 141);
     text('Welcome to a fun & interactive sound experience!', 160, 225);
     
 }
