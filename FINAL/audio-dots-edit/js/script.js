@@ -54,6 +54,14 @@ function preload() {
     sounds.push(rise1) 
     let snare = loadSound('assets/sounds/snare.wav');
     sounds.push(snare) 
+    let synth01 = loadSound('assets/sounds/synth01.wav');
+    sounds.push(synth01) 
+    let synth02 = loadSound('assets/sounds/synth02.wav');
+    sounds.push(synth02) 
+    let knife = loadSound('assets/sounds/knife.wav');
+    sounds.push(knife) 
+    let transmission = loadSound('assets/sounds/transmission.wav');
+    sounds.push(transmission) 
 }
 
 function setup() {
