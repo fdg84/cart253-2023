@@ -1,8 +1,8 @@
 class Ball {
 
-    // The constructor() sets up a Acne's properties
+    // The Constructor() Sets Properties
     constructor(x, y, radius, row, col, sound) {
-      // Position and size information
+      // Position and Size Information
       this.x = x;
       this.y = y;
       this.radius = 20;
@@ -19,7 +19,7 @@ class Ball {
       this.sound = sound;
     }
     
-    // Displays the Acne on the canvas
+    // Displays on the Canvas
     display() {
        push();
         if (this.isGrowing){
@@ -48,6 +48,7 @@ class Ball {
             fill(59, 95, 114)
             this.animate = false;
         }
+        
        strokeWeight(10);
        stroke(255); 
        ellipse(this.x, this.y, this.radius);

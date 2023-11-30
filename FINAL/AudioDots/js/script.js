@@ -1,11 +1,6 @@
 /**
  * Audio Dots
  * Francis Ouellette
- * 
- * Online Files (Codes)
- * https://www.youtube.com/watch?v=W-y4zEppsWg
- * https://p5js.org/examples/interaction-wavemaker.html
- * 
  */
 
 "use strict";
@@ -15,7 +10,7 @@ const radius = 50;
 let clickedBall
 const sounds = []
 let reverb;
-let t = 0; // time variable
+let t = 0; // Time Variable
 
 function preload() {
     let kick = loadSound('assets/sounds/kick1.wav');
@@ -68,7 +63,7 @@ function setup() {
     createCanvas (displayWidth, displayHeight);
     userStartAudio();
 
-    // moving circles
+    // Moving Circles
     noStroke();
     fill(40, 200, 40);
 
@@ -93,56 +88,54 @@ function setup() {
         balls.push(ball)
         }
     }
-
 }
 
 function draw() {
     background (163, 195, 141);
 
     fill(38, 65, 70);
+    // Bottom Circle (Turquoise)
 
      // X and Y grid of Ellipses (Particles)
      for (let x = 0; x <= width; x = x + 70) {
         for (let y = 0; y <= height; y = y + 70) {
-          // starting point of each circle depends on mouse position
+          // Starting Point of Each Circle Depends on Mouse Position
           const xAngle = map(mouseX, 0, width, -4 * PI, 4 * PI, true);
           const yAngle = map(mouseY, 0, height, -4 * PI, 4 * PI, true);
-          // and also varies based on the particle's location
+          // Varies Based on the Particle's Location
           const angle = xAngle * (x / width) + yAngle * (y / height);
-    
-          // each particle moves in a circle
+          // Each Particle Moves in a Circle
           const myX = x + 20 * cos(2 * PI * t + angle);
           const myY = y + 20 * sin(2 * PI * t + angle);
-    
-          ellipse(myX, myY, 40); // draw particle
+          ellipse(myX, myY, 40); // Draw Particle
         }
       }
 
-      fill(0);
+    fill(0);
+    // Top Circle (Black)
 
      // X and Y grid of Ellipses (Particles)
      for (let x = 0; x <= width; x = x + 70) {
         for (let y = 0; y <= height; y = y + 70) {
-          // starting point of each circle depends on mouse position
+          // Starting Point of Each Circle Depends on Mouse Position
           const xAngle = map(mouseX, 0, width, -4 * PI, 4 * PI, true);
           const yAngle = map(mouseY, 0, height, -4 * PI, 4 * PI, true);
-          // and also varies based on the particle's location
+          // Varies Based on the Particle's Location
           const angle = xAngle * (x / width) + yAngle * (y / height);
-    
-          // each particle moves in a circle
+          // Each Particle Moves in a Circle
           const myX = x + 20 * cos(2 * PI * t + angle);
           const myY = y + 20 * sin(2 * PI * t + angle);
-    
-          ellipse(myX, myY, 20); // draw particle
+          ellipse(myX, myY, 20); // Draw Particle
         }
       }
 
-    t = t + 0.0000001; // update time
+    t = t + 0.0000001; // Update Time
 
+    // Reverb (Audio)
     let dryWet = constrain(map(500, 0.3, Math.floor(Math.random() * 500), 0, 0.5), 0, 0.3);
-    
     reverb.drywet(dryWet);
 
+    // Hover Effect
     let hoverBall = balls.filter(ball => {
         if (mouseX < (ball.x + ball.clickRadius) && mouseX > (ball.x - ball.clickRadius) && mouseY < (ball.y + ball.clickRadius) && mouseY > (ball.y - ball.clickRadius)){
             return ball;
@@ -158,6 +151,7 @@ function draw() {
         balls[i].display()  
     } 
 
+    // Black Square (Info Box)
     rectMode(CORNER);
     fill(0);
     noStroke();
@@ -168,38 +162,38 @@ function draw() {
     strokeWeight(20);
     stroke(0);
     
-    // left ovals
+    // Left Ovals
     rect(75, 142, 40, 95, 20);
     rect(75, 238, 40, 50, 20);
     rect(75, 288, 40, 150, 20);
     rect(75, 438, 40, 65, 20);
 
-    // right ovals
+    // Right Ovals
     rect(485, 142, 40, 140, 20);
     rect(485, 285, 40, 50, 20);
     rect(485, 335, 40, 50, 20);
     rect(485, 385, 40, 117, 20);
 
-    // top ovals
+    // Top Ovals
     rect(125, 143, 50, 40, 20);
     rect(175, 143, 50, 40, 20);
     rect(225, 143, 150, 40, 20);
     rect(375, 143, 100, 40, 20);
 
-
-    // bottom ovals
+    // Bottom Ovals
     rect(125, 460, 150, 40, 20);
     rect(275, 460, 50, 40, 20);
     rect(325, 460, 100, 40, 20);
     rect(425, 460, 50, 40, 20);
 
-    // TITLE
+    // Title Text
     textFont(`Tilt Warp`)
     textSize(120);
     noStroke();
     fill(255);
     text('DOTS', 150, 368);
 
+    // Lime Text
     textFont(`Space Grotesk`)
     textSize(30);
     noStroke();
@@ -211,11 +205,11 @@ function draw() {
     fill(171, 250, 0);
     text('Click & Play', 280, 400);
 
+    // Info Text
     textSize(12);
     noStroke();
     fill(163, 195, 141);
     text('Welcome to a fun & interactive sound experience!', 160, 225);
-    
 }
 
 function mousePressed(e) {
