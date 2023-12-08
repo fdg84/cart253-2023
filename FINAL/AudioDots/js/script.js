@@ -53,10 +53,6 @@ function preload() {
     sounds.push(synth01) 
     let synth02 = loadSound('assets/sounds/synth02.wav');
     sounds.push(synth02) 
-    // let knife = loadSound('assets/sounds/knife.wav');
-    // sounds.push(knife) 
-    // let transmission = loadSound('assets/sounds/transmission.wav');
-    // sounds.push(transmission) 
 }
 
 function setup() {
